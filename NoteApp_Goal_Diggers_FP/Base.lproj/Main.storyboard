@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Add category-->
         <scene sceneID="vAz-ZY-NoI">
             <objects>
                 <tableViewController id="L21-DB-Ilz" sceneMemberID="viewController">
@@ -50,7 +50,7 @@
                             <outlet property="delegate" destination="L21-DB-Ilz" id="C7t-fg-CDC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="bTS-XL-mDq"/>
+                    <navigationItem key="navigationItem" title="Add category" id="bTS-XL-mDq" colorLabel="IBBuiltInLabel-Blue"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vYc-1t-YgU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
