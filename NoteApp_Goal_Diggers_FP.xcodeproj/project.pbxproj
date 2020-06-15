@@ -14,6 +14,8 @@
 		CE117A76249441D400BECD9D /* NoteApp_Goal_Diggers_FP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE117A74249441D400BECD9D /* NoteApp_Goal_Diggers_FP.xcdatamodeld */; };
 		CE117A78249441D700BECD9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE117A77249441D700BECD9D /* Assets.xcassets */; };
 		CE117A7B249441D700BECD9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE117A79249441D700BECD9D /* LaunchScreen.storyboard */; };
+		CE117A87249578E300BECD9D /* AddCategoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE117A86249578E300BECD9D /* AddCategoryTVC.swift */; };
+		CEB3C8412497F6720028CF41 /* AddNotesTVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3C8402497F6720028CF41 /* AddNotesTVCTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		CE117A77249441D700BECD9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE117A7A249441D700BECD9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE117A7C249441D700BECD9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE117A86249578E300BECD9D /* AddCategoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryTVC.swift; sourceTree = "<group>"; };
+		CEB3C8402497F6720028CF41 /* AddNotesTVCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotesTVCTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				CE117A6D249441D400BECD9D /* SceneDelegate.swift */,
 				CE117A6F249441D400BECD9D /* ViewController.swift */,
 				CE117A71249441D400BECD9D /* Main.storyboard */,
+				CEB3C8402497F6720028CF41 /* AddNotesTVCTableViewController.swift */,
+				CE117A86249578E300BECD9D /* AddCategoryTVC.swift */,
 				CE117A77249441D700BECD9D /* Assets.xcassets */,
 				CE117A79249441D700BECD9D /* LaunchScreen.storyboard */,
 				CE117A7C249441D700BECD9D /* Info.plist */,
@@ -142,7 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE117A70249441D400BECD9D /* ViewController.swift in Sources */,
+				CEB3C8412497F6720028CF41 /* AddNotesTVCTableViewController.swift in Sources */,
 				CE117A6C249441D400BECD9D /* AppDelegate.swift in Sources */,
+				CE117A87249578E300BECD9D /* AddCategoryTVC.swift in Sources */,
 				CE117A76249441D400BECD9D /* NoteApp_Goal_Diggers_FP.xcdatamodeld in Sources */,
 				CE117A6E249441D400BECD9D /* SceneDelegate.swift in Sources */,
 			);
