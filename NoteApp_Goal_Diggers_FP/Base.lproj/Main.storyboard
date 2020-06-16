@@ -35,7 +35,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sW-mq-M4d">
-                                            <rect key="frame" x="343" y="11" width="53" height="21"/>
+                                            <rect key="frame" x="343" y="11" width="53" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -43,6 +43,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="O4p-lx-hIa" kind="show" id="yA9-85-qMD"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -51,6 +54,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Category" id="bTS-XL-mDq" colorLabel="IBBuiltInLabel-Blue"/>
+                    <connections>
+                        <outlet property="mySearchBar" destination="L0c-G6-q4t" id="LZS-L8-7Za"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vYc-1t-YgU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,6 +85,7 @@
                             <outlet property="delegate" destination="O4p-lx-hIa" id="veq-6n-K0m"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="40j-hR-7IJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCH-FQ-RRw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

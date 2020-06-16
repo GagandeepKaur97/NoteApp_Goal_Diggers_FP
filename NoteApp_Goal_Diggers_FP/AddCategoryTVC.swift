@@ -10,6 +10,7 @@ import UIKit
 
 class AddCategoryTVC: UITableViewController {
 
+    @IBOutlet weak var mySearchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
 
