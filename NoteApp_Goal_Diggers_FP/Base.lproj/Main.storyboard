@@ -53,7 +53,17 @@
                             <outlet property="delegate" destination="L21-DB-Ilz" id="C7t-fg-CDC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Category" id="bTS-XL-mDq" colorLabel="IBBuiltInLabel-Blue"/>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="DQ5-xa-AC6"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Category" id="bTS-XL-mDq" colorLabel="IBBuiltInLabel-Blue">
+                        <barButtonItem key="rightBarButtonItem" image="pencil.and.ellipsis.rectangle" catalog="system" id="o2F-Hw-11e">
+                            <connections>
+                                <action selector="AddNotes:" destination="L21-DB-Ilz" id="b7C-RH-3ad"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mySearchBar" destination="L0c-G6-q4t" id="LZS-L8-7Za"/>
                     </connections>
@@ -111,4 +121,7 @@
             <point key="canvasLocation" x="811.59420289855075" y="-11.383928571428571"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
+    </resources>
 </document>
