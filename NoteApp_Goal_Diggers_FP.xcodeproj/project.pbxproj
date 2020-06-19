@@ -16,6 +16,7 @@
 		CE117A7B249441D700BECD9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE117A79249441D700BECD9D /* LaunchScreen.storyboard */; };
 		CE117A87249578E300BECD9D /* AddCategoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE117A86249578E300BECD9D /* AddCategoryTVC.swift */; };
 		CEB3C8412497F6720028CF41 /* AddNotesTVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3C8402497F6720028CF41 /* AddNotesTVCTableViewController.swift */; };
+		CECF9DA8249C52C800592EE1 /* notebook.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CECF9DA7249C52C800592EE1 /* notebook.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		CE117A7C249441D700BECD9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE117A86249578E300BECD9D /* AddCategoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryTVC.swift; sourceTree = "<group>"; };
 		CEB3C8402497F6720028CF41 /* AddNotesTVCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotesTVCTableViewController.swift; sourceTree = "<group>"; };
+		CECF9DA7249C52C800592EE1 /* notebook.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = notebook.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				CE117A86249578E300BECD9D /* AddCategoryTVC.swift */,
 				CE117A77249441D700BECD9D /* Assets.xcassets */,
 				CE117A79249441D700BECD9D /* LaunchScreen.storyboard */,
+				CECF9DA7249C52C800592EE1 /* notebook.jpg */,
 				CE117A7C249441D700BECD9D /* Info.plist */,
 				CE117A74249441D400BECD9D /* NoteApp_Goal_Diggers_FP.xcdatamodeld */,
 			);
@@ -134,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CECF9DA8249C52C800592EE1 /* notebook.jpg in Resources */,
 				CE117A7B249441D700BECD9D /* LaunchScreen.storyboard in Resources */,
 				CE117A78249441D700BECD9D /* Assets.xcassets in Resources */,
 				CE117A73249441D400BECD9D /* Main.storyboard in Resources */,
