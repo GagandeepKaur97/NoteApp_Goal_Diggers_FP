@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
-class AddCategoryTVC: UITableViewController {
+class AddCategoryTVC: UITableViewController ,UISearchBarDelegate{
 
+       var context: NSManagedObjectContext?
+       var folders: [NSManagedObject]?
     @IBOutlet weak var mySearchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
