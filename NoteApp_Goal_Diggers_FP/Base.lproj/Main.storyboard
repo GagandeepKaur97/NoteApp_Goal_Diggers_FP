@@ -72,7 +72,7 @@
             </objects>
             <point key="canvasLocation" x="1721.7391304347827" y="-11.383928571428571"/>
         </scene>
-        <!--Table View Controller-->
+        <!--ADD NEW NOTE-->
         <scene sceneID="SxT-Yp-6gr">
             <objects>
                 <tableViewController id="O4p-lx-hIa" sceneMemberID="viewController">
@@ -87,6 +87,42 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lo4-CN-rSh" id="EBp-FI-eHX">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IJ-mQ-Op0">
+                                            <rect key="frame" x="12" y="0.0" width="34" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uN-T6-dPY">
+                                            <rect key="frame" x="12" y="22" width="66" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACb-f9-F4O">
+                                            <rect key="frame" x="363" y="0.0" width="36" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zid-v7-tCy">
+                                            <rect key="frame" x="361" y="22" width="38" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="6uN-T6-dPY" firstAttribute="top" secondItem="8IJ-mQ-Op0" secondAttribute="bottom" constant="1" id="FR5-9Y-31S"/>
+                                        <constraint firstItem="6uN-T6-dPY" firstAttribute="leading" secondItem="EBp-FI-eHX" secondAttribute="leading" constant="12" id="JrL-Lj-2IK"/>
+                                        <constraint firstAttribute="trailing" secondItem="Zid-v7-tCy" secondAttribute="trailing" constant="15" id="ZHc-Gc-cYm"/>
+                                        <constraint firstItem="Zid-v7-tCy" firstAttribute="top" secondItem="ACb-f9-F4O" secondAttribute="bottom" constant="1" id="dlP-P5-YBl"/>
+                                        <constraint firstAttribute="bottom" secondItem="6uN-T6-dPY" secondAttribute="bottom" constant="0.5" id="g5z-c9-vir"/>
+                                        <constraint firstItem="8IJ-mQ-Op0" firstAttribute="leading" secondItem="EBp-FI-eHX" secondAttribute="leading" constant="12" id="q9E-B8-hMg"/>
+                                        <constraint firstAttribute="trailing" secondItem="ACb-f9-F4O" secondAttribute="trailing" constant="15" id="r1S-Eq-s3q"/>
+                                        <constraint firstAttribute="bottom" secondItem="Zid-v7-tCy" secondAttribute="bottom" constant="0.5" id="v5A-nA-Yoh"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -95,7 +131,7 @@
                             <outlet property="delegate" destination="O4p-lx-hIa" id="veq-6n-K0m"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="40j-hR-7IJ"/>
+                    <navigationItem key="navigationItem" title="ADD NEW NOTE" id="40j-hR-7IJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCH-FQ-RRw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
