@@ -12,16 +12,28 @@ import CoreData
 class AddCategoryTVC: UITableViewController ,UISearchBarDelegate{
 
        var context: NSManagedObjectContext?
-       var folders: [NSManagedObject]?
+       var folder: [NSManagedObject]?
     @IBOutlet weak var mySearchBar: UISearchBar!
+    
+      var NoteArray: [String]?
+       var isSearching = false
+       let mainColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
     override func viewDidLoad() {
         super.viewDidLoad()
 
+         mySearchBar.delegate = self
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        context = appDelegate.persistentContainer.viewContext
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
     }
 
     // MARK: - Table view data source
@@ -49,6 +61,16 @@ class AddCategoryTVC: UITableViewController ,UISearchBarDelegate{
     
     
     @IBAction func AddNotes(_ sender: UIBarButtonItem) {
+        
+        
+        let titleString = NSAttributedString(string: "New Folder", attributes: [NSAttributedString.Key.foregroundColor: mainColor, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)])
+               
+               let alertController = UIAlertController(title: "", message: "Enter new folder", preferredStyle: .alert)
+               alertController.setValue(titleString, forKey: "attributedTitle")
+               
+               alertController.addTextField { (txtNewFolder) in
+                   txtNewFolder.placeholder = "Enter the name of your category"
+               }
     }
     
     /*
