@@ -1,15 +1,15 @@
 //
-//  AddNotesTVCTableViewController.swift
+//  NotesCell.swift
 //  NoteApp_Goal_Diggers_FP
 //
-//  Created by Gagan on 2020-06-15.
+//  Created by Gagan on 2020-06-19.
 //  Copyright © 2020 Gagan. All rights reserved.
 //
 
 import UIKit
 
-class AddNotesTVCTableViewController: UITableViewController {
-var categoryName: String?
+class NotesCell: UITableViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

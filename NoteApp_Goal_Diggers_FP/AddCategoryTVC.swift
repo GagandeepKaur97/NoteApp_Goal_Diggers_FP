@@ -25,11 +25,12 @@ class AddCategoryTVC: UITableViewController , UISearchBarDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mySearchBar.delegate = self
+//        mySearchBar.delegate = self
         
          let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
          context = appDelegate.persistentContainer.viewContext
+        loadData()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -38,7 +39,7 @@ class AddCategoryTVC: UITableViewController , UISearchBarDelegate{
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         
-         loadData()
+    
     }
 
     // MARK: - Table view data source
@@ -51,6 +52,7 @@ class AddCategoryTVC: UITableViewController , UISearchBarDelegate{
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
           return !isSearching ? (folder?.count ?? 0) : (NoteArray?.count ?? 0)
+        
     }
 
     
