@@ -57,12 +57,16 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Category" id="bTS-XL-mDq" colorLabel="IBBuiltInLabel-Blue">
                         <rightBarButtonItems>
-                            <barButtonItem title="ADDNOTE" style="plain" id="8kB-fp-cPR" colorLabel="IBBuiltInLabel-Blue">
+                            <barButtonItem image="square.and.pencil" catalog="system" style="plain" id="8kB-fp-cPR" colorLabel="IBBuiltInLabel-Blue">
                                 <connections>
                                     <action selector="ADDNotes:" destination="L21-DB-Ilz" id="5pA-Np-PDM"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="pencil.and.ellipsis.rectangle" catalog="system" id="o2F-Hw-11e"/>
+                            <barButtonItem image="pencil.and.ellipsis.rectangle" catalog="system" id="o2F-Hw-11e">
+                                <connections>
+                                    <action selector="Add:" destination="L21-DB-Ilz" id="BU1-Ol-NhB"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -77,63 +81,72 @@
         <!--ADD NEW NOTE-->
         <scene sceneID="SxT-Yp-6gr">
             <objects>
-                <tableViewController id="O4p-lx-hIa" sceneMemberID="viewController">
+                <tableViewController id="O4p-lx-hIa" customClass="AddNotesTVCTableViewController" customModule="NoteApp_Goal_Diggers_FP" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z55-uF-2x8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Www-sJ-GS6">
-                            <rect key="frame" x="0.0" y="99.5" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <items>
-                                <barButtonItem title="I" image="pencil.circle" catalog="system" id="Azv-SM-wCk"/>
-                            </items>
-                        </toolbar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lo4-CN-rSh">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="78" id="lo4-CN-rSh" customClass="NotesCell" customModule="NoteApp_Goal_Diggers_FP" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lo4-CN-rSh" id="EBp-FI-eHX">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="78"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IJ-mQ-Op0">
-                                            <rect key="frame" x="12" y="0.0" width="34" height="21"/>
+                                            <rect key="frame" x="15" y="10" width="140" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="140" id="n8E-8q-zYN"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uN-T6-dPY">
-                                            <rect key="frame" x="12" y="22" width="66" height="21"/>
+                                            <rect key="frame" x="15" y="41" width="150" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="150" id="bfB-GS-hWa"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACb-f9-F4O">
-                                            <rect key="frame" x="363" y="0.0" width="36" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACb-f9-F4O">
+                                            <rect key="frame" x="249" y="10" width="150" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="150" id="ovi-69-oDy"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zid-v7-tCy">
-                                            <rect key="frame" x="361" y="22" width="38" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zid-v7-tCy">
+                                            <rect key="frame" x="249" y="41" width="150" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="150" id="Jiv-oT-LoR"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="6uN-T6-dPY" firstAttribute="top" secondItem="8IJ-mQ-Op0" secondAttribute="bottom" constant="1" id="FR5-9Y-31S"/>
-                                        <constraint firstItem="6uN-T6-dPY" firstAttribute="leading" secondItem="EBp-FI-eHX" secondAttribute="leading" constant="12" id="JrL-Lj-2IK"/>
-                                        <constraint firstAttribute="trailing" secondItem="Zid-v7-tCy" secondAttribute="trailing" constant="15" id="ZHc-Gc-cYm"/>
-                                        <constraint firstItem="Zid-v7-tCy" firstAttribute="top" secondItem="ACb-f9-F4O" secondAttribute="bottom" constant="1" id="dlP-P5-YBl"/>
-                                        <constraint firstAttribute="bottom" secondItem="6uN-T6-dPY" secondAttribute="bottom" constant="0.5" id="g5z-c9-vir"/>
-                                        <constraint firstItem="8IJ-mQ-Op0" firstAttribute="leading" secondItem="EBp-FI-eHX" secondAttribute="leading" constant="12" id="q9E-B8-hMg"/>
-                                        <constraint firstAttribute="trailing" secondItem="ACb-f9-F4O" secondAttribute="trailing" constant="15" id="r1S-Eq-s3q"/>
-                                        <constraint firstAttribute="bottom" secondItem="Zid-v7-tCy" secondAttribute="bottom" constant="0.5" id="v5A-nA-Yoh"/>
+                                        <constraint firstItem="8IJ-mQ-Op0" firstAttribute="leading" secondItem="EBp-FI-eHX" secondAttribute="leading" constant="15" id="AIq-57-0W5"/>
+                                        <constraint firstItem="6uN-T6-dPY" firstAttribute="top" secondItem="8IJ-mQ-Op0" secondAttribute="bottom" constant="10" id="FAN-ea-Mwo"/>
+                                        <constraint firstItem="Zid-v7-tCy" firstAttribute="top" secondItem="ACb-f9-F4O" secondAttribute="bottom" constant="10" id="Hw1-J3-emc"/>
+                                        <constraint firstAttribute="trailing" secondItem="Zid-v7-tCy" secondAttribute="trailing" constant="15" id="WN4-yc-Bz3"/>
+                                        <constraint firstItem="6uN-T6-dPY" firstAttribute="leading" secondItem="EBp-FI-eHX" secondAttribute="leading" constant="15" id="Z2i-G9-HsA"/>
+                                        <constraint firstAttribute="trailing" secondItem="ACb-f9-F4O" secondAttribute="trailing" constant="15" id="h0t-oZ-Xh1"/>
+                                        <constraint firstItem="ACb-f9-F4O" firstAttribute="top" secondItem="EBp-FI-eHX" secondAttribute="top" constant="10" id="hbg-Tc-bLB"/>
+                                        <constraint firstItem="8IJ-mQ-Op0" firstAttribute="top" secondItem="EBp-FI-eHX" secondAttribute="top" constant="10" id="xee-RE-Sqp"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="Date" destination="ACb-f9-F4O" id="cCz-hQ-yDT"/>
+                                    <outlet property="Time" destination="Zid-v7-tCy" id="3tf-Vt-775"/>
+                                    <outlet property="location" destination="6uN-T6-dPY" id="3ou-wL-LL9"/>
+                                    <outlet property="title" destination="8IJ-mQ-Op0" id="Wl0-3d-vZt"/>
                                     <segue destination="ldb-0V-dlU" kind="show" id="4kp-rR-FdL"/>
                                 </connections>
                             </tableViewCell>
@@ -144,11 +157,6 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem image="pencil.circle.fill" catalog="system" id="I4h-ax-4I9">
-                            <connections>
-                                <segue destination="ldb-0V-dlU" kind="show" id="Enx-Wx-VBl"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem enabled="NO" id="DQ5-xa-AC6">
                             <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -156,17 +164,19 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="ADD NEW NOTE" id="40j-hR-7IJ"/>
+                    <navigationItem key="navigationItem" title="ADD NEW NOTE" id="40j-hR-7IJ">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="NMl-4g-dsC"/>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCH-FQ-RRw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2722" y="-1"/>
+            <point key="canvasLocation" x="2721.739130434783" y="-1.3392857142857142"/>
         </scene>
         <!--Notes-->
         <scene sceneID="xsW-wz-AVg">
             <objects>
-                <viewController id="ldb-0V-dlU" sceneMemberID="viewController">
+                <viewController id="ldb-0V-dlU" customClass="addnotesViewController" customModule="NoteApp_Goal_Diggers_FP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pUF-9p-WEV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,10 +191,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fHD-zE-4BK">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description...." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fHD-zE-4BK">
                                 <rect key="frame" x="20" y="254" width="374" height="144"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -301,10 +310,6 @@
     <resources>
         <image name="paperplane.fill" catalog="system" width="64" height="60"/>
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
-        <image name="pencil.circle" catalog="system" width="64" height="60"/>
-        <image name="pencil.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="4kp-rR-FdL"/>
-    </inferredMetricsTieBreakers>
 </document>

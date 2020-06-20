@@ -18,6 +18,8 @@
 		CEB3C8412497F6720028CF41 /* AddNotesTVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3C8402497F6720028CF41 /* AddNotesTVCTableViewController.swift */; };
 		CECF9DA8249C52C800592EE1 /* notebook.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CECF9DA7249C52C800592EE1 /* notebook.jpg */; };
 		CECF9DAA249C61AC00592EE1 /* customAnno.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF9DA9249C61AC00592EE1 /* customAnno.swift */; };
+		CECF9DAE249E981F00592EE1 /* NotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF9DAD249E981F00592EE1 /* NotesCell.swift */; };
+		CECF9DB0249EA03500592EE1 /* addnotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF9DAF249EA03500592EE1 /* addnotesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		CEB3C8402497F6720028CF41 /* AddNotesTVCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotesTVCTableViewController.swift; sourceTree = "<group>"; };
 		CECF9DA7249C52C800592EE1 /* notebook.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = notebook.jpg; sourceTree = "<group>"; };
 		CECF9DA9249C61AC00592EE1 /* customAnno.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customAnno.swift; sourceTree = "<group>"; };
+		CECF9DAD249E981F00592EE1 /* NotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCell.swift; sourceTree = "<group>"; };
+		CECF9DAF249EA03500592EE1 /* addnotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addnotesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +75,9 @@
 				CE117A6F249441D400BECD9D /* ViewController.swift */,
 				CECF9DA9249C61AC00592EE1 /* customAnno.swift */,
 				CE117A71249441D400BECD9D /* Main.storyboard */,
+				CECF9DAF249EA03500592EE1 /* addnotesViewController.swift */,
 				CEB3C8402497F6720028CF41 /* AddNotesTVCTableViewController.swift */,
+				CECF9DAD249E981F00592EE1 /* NotesCell.swift */,
 				CE117A86249578E300BECD9D /* AddCategoryTVC.swift */,
 				CE117A77249441D700BECD9D /* Assets.xcassets */,
 				CE117A79249441D700BECD9D /* LaunchScreen.storyboard */,
@@ -157,10 +163,12 @@
 				CE117A70249441D400BECD9D /* ViewController.swift in Sources */,
 				CEB3C8412497F6720028CF41 /* AddNotesTVCTableViewController.swift in Sources */,
 				CE117A6C249441D400BECD9D /* AppDelegate.swift in Sources */,
+				CECF9DAE249E981F00592EE1 /* NotesCell.swift in Sources */,
 				CECF9DAA249C61AC00592EE1 /* customAnno.swift in Sources */,
 				CE117A87249578E300BECD9D /* AddCategoryTVC.swift in Sources */,
 				CE117A76249441D400BECD9D /* NoteApp_Goal_Diggers_FP.xcdatamodeld in Sources */,
 				CE117A6E249441D400BECD9D /* SceneDelegate.swift in Sources */,
+				CECF9DB0249EA03500592EE1 /* addnotesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

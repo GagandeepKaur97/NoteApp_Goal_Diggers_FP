@@ -25,20 +25,21 @@ class AddCategoryTVC: UITableViewController , UISearchBarDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        mySearchBar.delegate = self
+        mySearchBar.delegate = self
         
          let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
          context = appDelegate.persistentContainer.viewContext
-        loadData()
+       
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
+               self.navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.8857288957, green: 0.9869052768, blue: 0.9952554107, alpha: 1)
+        loadData()
     
     }
 
@@ -114,8 +115,10 @@ class AddCategoryTVC: UITableViewController , UISearchBarDelegate{
     }
     
     
+    @IBAction func Add(_ sender: UIBarButtonItem) {
     
-    @IBAction func ADDNotes(_ sender: UIBarButtonItem) {
+    
+//    @IBAction func ADDNotes(_ sender: UIBarButtonItem) {
         
         let titleString = NSAttributedString(string: "New Folder", attributes: [NSAttributedString.Key.foregroundColor: mainColor, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)])
             
