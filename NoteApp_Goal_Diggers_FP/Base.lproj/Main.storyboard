@@ -55,14 +55,16 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem title="Item" image="pencil.and.outline" catalog="system" style="plain" id="DQ5-xa-AC6"/>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Category" id="bTS-XL-mDq" colorLabel="IBBuiltInLabel-Blue">
-                        <barButtonItem key="rightBarButtonItem" image="pencil.and.ellipsis.rectangle" catalog="system" id="o2F-Hw-11e">
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="8kB-fp-cPR"/>
+                        <barButtonItem title="Item" image="pencil.and.outline" catalog="system" id="DQ5-xa-AC6">
+                            <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="AddNotes:" destination="L21-DB-Ilz" id="b7C-RH-3ad"/>
+                                <action selector="AddNotes:" destination="L21-DB-Ilz" id="9VD-hq-dr0"/>
                             </connections>
                         </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Category" id="bTS-XL-mDq" colorLabel="IBBuiltInLabel-Blue">
+                        <barButtonItem key="rightBarButtonItem" image="pencil.and.ellipsis.rectangle" catalog="system" id="o2F-Hw-11e"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

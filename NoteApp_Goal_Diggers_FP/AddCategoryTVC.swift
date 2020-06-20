@@ -60,18 +60,12 @@ class AddCategoryTVC: UITableViewController ,UISearchBarDelegate{
     */
 
     
-    
     @IBAction func AddNotes(_ sender: UIBarButtonItem) {
+    }
+    
+ 
         
-        
-        let titleString = NSAttributedString(string: "New Folder", attributes: [NSAttributedString.Key.foregroundColor: mainColor, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)])
-               
-               let alertController = UIAlertController(title: "", message: "Enter new folder", preferredStyle: .alert)
-               alertController.setValue(titleString, forKey: "attributedTitle")
-               
-               alertController.addTextField { (txtNewFolder) in
-                   txtNewFolder.placeholder = "Enter the name of your category"
-               }
+       
     }
     
     /*
@@ -119,4 +113,4 @@ class AddCategoryTVC: UITableViewController ,UISearchBarDelegate{
     }
     */
 
-}
+
