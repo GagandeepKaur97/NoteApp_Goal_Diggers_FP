@@ -7,9 +7,11 @@
 //
 
 import UIKit
-
+import CoreData
 class AddNotesTVCTableViewController: UITableViewController {
-
+    var categoryName: String?
+       var notes: [NSManagedObject]?
+       var context: NSManagedObjectContext?
     override func viewDidLoad() {
         super.viewDidLoad()
 

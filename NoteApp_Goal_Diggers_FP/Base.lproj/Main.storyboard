@@ -54,17 +54,16 @@
                             <outlet property="delegate" destination="L21-DB-Ilz" id="C7t-fg-CDC"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="8kB-fp-cPR" colorLabel="IBBuiltInLabel-Blue"/>
-                        <barButtonItem title="Item" image="pencil.and.outline" catalog="system" id="DQ5-xa-AC6">
-                            <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="AddNotes:" destination="L21-DB-Ilz" id="9VD-hq-dr0"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Category" id="bTS-XL-mDq" colorLabel="IBBuiltInLabel-Blue">
-                        <barButtonItem key="rightBarButtonItem" image="pencil.and.ellipsis.rectangle" catalog="system" id="o2F-Hw-11e"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="ADDNOTE" style="plain" id="8kB-fp-cPR" colorLabel="IBBuiltInLabel-Blue">
+                                <connections>
+                                    <action selector="ADDNotes:" destination="L21-DB-Ilz" id="5pA-Np-PDM"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="pencil.and.ellipsis.rectangle" catalog="system" id="o2F-Hw-11e"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -148,6 +147,12 @@
                         <barButtonItem image="pencil.circle.fill" catalog="system" id="I4h-ax-4I9">
                             <connections>
                                 <segue destination="ldb-0V-dlU" kind="show" id="Enx-Wx-VBl"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem enabled="NO" id="DQ5-xa-AC6">
+                            <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="AddNotes:" destination="L21-DB-Ilz" id="9VD-hq-dr0"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -296,7 +301,6 @@
     <resources>
         <image name="paperplane.fill" catalog="system" width="64" height="60"/>
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
-        <image name="pencil.and.outline" catalog="system" width="64" height="58"/>
         <image name="pencil.circle" catalog="system" width="64" height="60"/>
         <image name="pencil.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
