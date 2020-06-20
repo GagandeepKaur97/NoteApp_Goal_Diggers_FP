@@ -55,7 +55,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="8kB-fp-cPR"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="8kB-fp-cPR" colorLabel="IBBuiltInLabel-Blue"/>
                         <barButtonItem title="Item" image="pencil.and.outline" catalog="system" id="DQ5-xa-AC6">
                             <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -166,14 +166,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LOg-eH-KkT">
-                                <rect key="frame" x="13" y="131" width="381" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LOg-eH-KkT">
+                                <rect key="frame" x="20" y="118" width="374" height="47"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u9Z-iC-r2e">
+                                <rect key="frame" x="20" y="180" width="374" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fHD-zE-4BK">
+                                <rect key="frame" x="20" y="254" width="374" height="144"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCa-sd-i7U">
+                                <rect key="frame" x="20" y="758" width="374" height="30"/>
+                                <state key="normal" title="SAVE"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hJ9-eg-bhp" firstAttribute="bottom" secondItem="LOg-eH-KkT" secondAttribute="bottom" constant="648" id="6Gu-D9-cUJ"/>
+                            <constraint firstItem="lCa-sd-i7U" firstAttribute="leading" secondItem="hJ9-eg-bhp" secondAttribute="leading" constant="20" id="92n-u1-n2G"/>
+                            <constraint firstItem="fHD-zE-4BK" firstAttribute="leading" secondItem="hJ9-eg-bhp" secondAttribute="leading" constant="20" id="BMb-iH-pN2"/>
+                            <constraint firstItem="u9Z-iC-r2e" firstAttribute="top" secondItem="LOg-eH-KkT" secondAttribute="bottom" constant="15" id="D6w-0v-K1f"/>
+                            <constraint firstItem="fHD-zE-4BK" firstAttribute="top" secondItem="u9Z-iC-r2e" secondAttribute="bottom" constant="20" id="FzG-h9-pE9"/>
+                            <constraint firstItem="LOg-eH-KkT" firstAttribute="leading" secondItem="hJ9-eg-bhp" secondAttribute="leading" constant="20" id="NzD-ZW-sfB"/>
+                            <constraint firstItem="hJ9-eg-bhp" firstAttribute="trailing" secondItem="LOg-eH-KkT" secondAttribute="trailing" constant="20" id="TCP-m1-WAg"/>
+                            <constraint firstItem="hJ9-eg-bhp" firstAttribute="bottom" secondItem="u9Z-iC-r2e" secondAttribute="bottom" constant="579" id="bVn-J3-ZtL"/>
+                            <constraint firstItem="hJ9-eg-bhp" firstAttribute="trailing" secondItem="lCa-sd-i7U" secondAttribute="trailing" constant="20" id="l6Y-HT-fwH"/>
+                            <constraint firstItem="u9Z-iC-r2e" firstAttribute="leading" secondItem="hJ9-eg-bhp" secondAttribute="leading" constant="20" id="p7r-id-qgh"/>
+                            <constraint firstItem="hJ9-eg-bhp" firstAttribute="bottom" secondItem="fHD-zE-4BK" secondAttribute="bottom" constant="415" id="shR-5N-tFk"/>
+                            <constraint firstItem="hJ9-eg-bhp" firstAttribute="trailing" secondItem="u9Z-iC-r2e" secondAttribute="trailing" constant="20" id="wD5-4k-41R"/>
+                            <constraint firstItem="LOg-eH-KkT" firstAttribute="top" secondItem="hJ9-eg-bhp" secondAttribute="top" constant="30" id="ycW-WM-cwS"/>
+                            <constraint firstItem="hJ9-eg-bhp" firstAttribute="trailing" secondItem="fHD-zE-4BK" secondAttribute="trailing" constant="20" id="zvy-dP-aNa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hJ9-eg-bhp"/>
                     </view>
                     <navigationItem key="navigationItem" title="Notes" id="go7-yW-aef">

@@ -11,21 +11,14 @@ import CoreData
 
 class AddCategoryTVC: UITableViewController ,UISearchBarDelegate{
 
-       var context: NSManagedObjectContext?
-       var folder: [NSManagedObject]?
+      
     @IBOutlet weak var mySearchBar: UISearchBar!
     
-      var NoteArray: [String]?
-       var isSearching = false
-       let mainColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+      
     override func viewDidLoad() {
         super.viewDidLoad()
         
 
-         mySearchBar.delegate = self
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        context = appDelegate.persistentContainer.viewContext
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -33,8 +26,7 @@ class AddCategoryTVC: UITableViewController ,UISearchBarDelegate{
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
-        self.navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+       
     }
 
     // MARK: - Table view data source
@@ -66,7 +58,7 @@ class AddCategoryTVC: UITableViewController ,UISearchBarDelegate{
  
         
        
-    }
+   
     
     /*
     // Override to support conditional editing of the table view.
@@ -114,3 +106,4 @@ class AddCategoryTVC: UITableViewController ,UISearchBarDelegate{
     */
 
 
+}
