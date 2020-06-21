@@ -128,6 +128,16 @@ class addnotesViewController: UIViewController, CLLocationManagerDelegate,UIImag
         print("Error saving image")
         return nil
     }
-        
+
+ private func load(fileName: String) -> UIImage? {
+        let fileURL = getDocumentsDirectory().appendingPathComponent(fileName)
+        do {
+            let imageData = try Data(contentsOf: fileURL)
+            return UIImage(data: imageData)
+        } catch {
+            print("Error loading image : \(error)")
+        }
+        return nil
+    }        
 
 }
