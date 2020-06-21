@@ -104,5 +104,19 @@ class addnotesViewController: UIViewController, CLLocationManagerDelegate,UIImag
        self.present(alert!, animated: true)
         
     }
+ func imagePickerController(_ picker: UIImagePickerController,didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        guard let selectedImage: UIImage = info[.originalImage] as? UIImage else {
+            print("Image not found!")
+            return
+        }
+        let res = saveImage(image: selectedImage)
+        print("saved image: ", res!)
+        selectedImage.accessibilityUserInputLabels = [res!]
+        newNote?.strFiles.append(res!)
+        cvFiles.reloadData()
+        dismiss(animated: true, completion: nil)
+    }
+    
 
 }
