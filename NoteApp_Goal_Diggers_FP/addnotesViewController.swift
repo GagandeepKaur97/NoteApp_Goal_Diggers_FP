@@ -11,7 +11,7 @@ import CoreData
 import AVFoundation
 import CoreLocation
 
-class addnotesViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate , AVAudioRecorderDelegate{
+class addnotesViewController: UIViewController, CLLocationManagerDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,AVAudioRecorderDelegate, AVAudioPlayerDelegate
       var newNote: NSManagedObject?
     
        var context: NSManagedObjectContext?
