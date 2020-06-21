@@ -202,6 +202,15 @@ func startRecording() {
             finishRecording(success: false)
         }
     }
+
+
+   func finishRecording(success: Bool) {
+        audioRecorder.stop()
+        print("Recording finished..")
+        newNote?.strFiles.append(recordingSession.accessibilityLabel!)
+        cvFiles.reloadData()
+        audioRecorder = nil
+    }
     
 
 }
