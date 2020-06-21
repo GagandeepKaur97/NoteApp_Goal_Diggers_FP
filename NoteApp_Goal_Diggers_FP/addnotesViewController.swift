@@ -78,4 +78,31 @@ class addnotesViewController: UIViewController, CLLocationManagerDelegate,UIImag
         
         cvFiles.register(UINib(nibName: "AudioCell", bundle: nil), forCellWithReuseIdentifier: "AudioCell")
     }  
+ @IBAction func chooseImageFromPicker(_ sender: Any) {
+        alert = UIAlertController(title: "Do want to add media?", message: "Choose any of them.", preferredStyle: .actionSheet)
+
+        alert!.addAction(UIAlertAction(title: "Open Gallary", style: .default, handler: { (addImage) in
+        
+            self.imagePicker.sourceType = .photoLibrary
+            self.present(self.imagePicker, animated: true, completion: nil)
+                    
+        }))
+
+       alert!.addAction(UIAlertAction(title: "Open Camera", style: .default, handler: { (addImage2) in
+
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            self.imagePicker.sourceType = .camera
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }else{
+            self.alert2 = UIAlertController(title: "Sorry We are unable to open camera", message: "Choose from gallary.", preferredStyle: .alert)
+            self.alert2!.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+            self.present(self.alert2!, animated: true)
+        }
+        
+       }))
+       self.present(alert!, animated: true)
+        
+    }
+
 }
