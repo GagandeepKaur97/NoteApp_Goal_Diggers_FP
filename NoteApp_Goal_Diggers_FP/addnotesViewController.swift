@@ -117,6 +117,17 @@ class addnotesViewController: UIViewController, CLLocationManagerDelegate,UIImag
         cvFiles.reloadData()
         dismiss(animated: true, completion: nil)
     }
-    
+
+  private func saveImage(image: UIImage) -> String? {
+        let fileName = "Image_\(getTimeStamp()).jpeg"
+        let fileURL = getDocumentsDirectory().appendingPathComponent(fileName)
+        if let imageData = image.jpegData(compressionQuality: 1.0) {
+           try? imageData.write(to: fileURL, options: .atomic)
+           return fileName // ----> Save fileName
+        }
+        print("Error saving image")
+        return nil
+    }
+        
 
 }
