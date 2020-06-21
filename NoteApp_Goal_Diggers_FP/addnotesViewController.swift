@@ -219,6 +219,11 @@ func startRecording() {
         } else {
             finishRecording(success: true)
         }
-    }    
+    }   
 
+  func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if !flag {
+            finishRecording(success: false)
+        }
+    }
 }
