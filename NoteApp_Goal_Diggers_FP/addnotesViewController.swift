@@ -211,6 +211,14 @@ func startRecording() {
         cvFiles.reloadData()
         audioRecorder = nil
     }
-    
+
+
+ @objc func recordTapped() {
+        if audioRecorder == nil {
+            startRecording()
+        } else {
+            finishRecording(success: true)
+        }
+    }    
 
 }
