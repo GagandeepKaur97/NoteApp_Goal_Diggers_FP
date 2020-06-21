@@ -138,6 +138,22 @@ class addnotesViewController: UIViewController, CLLocationManagerDelegate,UIImag
             print("Error loading image : \(error)")
         }
         return nil
-    }        
+    }  
+
+ @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            // we got back an error!
+            showPopup(vc: self, title: "Save error", msg: error.localizedDescription, btnText: "Cancel")
+        } else {
+            if let url = URL(string: image.accessibilityUserInputLabels.first!) {
+                let fileName = url.lastPathComponent
+
+                print("clicked image",fileName)
+                newNote?.strFiles.append(fileName)
+            }
+            showPopup(vc: self, title: "Saved!", msg: "Your image has been saved to your photos.", btnText: "Okay")
+            cvFiles.reloadData()
+        }
+    }
 
 }
