@@ -272,3 +272,61 @@ func startRecording() {
         return UIImage(contentsOfFile: path)
     }
 }
+
+extension addnoteViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+            let width = (self.view.frame.size.width - 12 * 3) / 3 //some width
+            let height = width * 1.5 //ratio
+        return CGSize(width: width, height: height)
+    }
+    
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return newNote?.strFiles.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            
+        if !(newNote?.strFiles.isEmpty)! {
+            let i = indexPath.row
+            print("suffix: ", String((newNote?.strFiles[i].suffix(from: (newNote?.strFiles[i].firstIndex(of: "."))!))!))
+            
+            switch newNote?.strFiles[i].suffix(from: (newNote?.strFiles[i].firstIndex(of: "."))!) {
+                
+            case ".png", ".jpeg":
+                print("is photo")
+                if let cell : ImageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as? ImageCell{
+                    let path = (newNote?.strFiles[indexPath.row])!
+                    print("path: ", path)
+                    cell.setImage(load(fileName: path))
+                    return cell
+                }
+            
+            case ".mp3", ".m4a":
+                print("is audio")
+                if let cell : AudioCell = collectionView.dequeueReusableCell(withReuseIdentifier: "AudioCell", for: indexPath) as? AudioCell{
+                    cell.setAudio(player: AVAudioPlayer(), fileURL: getDocumentsDirectory().appendingPathComponent((newNote?.strFiles[indexPath.row])!))
+                    
+                    return cell
+                }
+                
+            default:
+                return UICollectionViewCell()
+            }
+        }
+        return UICollectionViewCell()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+           if let map = segue.destination as? MapViewController {
+                    
+                   map.addnoteViewController = self
+              
+           }
+    }
+    
+}
+
+
