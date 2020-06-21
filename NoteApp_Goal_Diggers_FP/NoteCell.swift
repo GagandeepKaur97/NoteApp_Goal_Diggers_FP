@@ -11,9 +11,15 @@ import CoreData
 import CoreLocation
 class NotesCell: UITableViewCell {
 
+ override func awakeFromNib() {
+        super.awakeFromNib()
+        //self.contentView.backgroundColor = #colorLiteral(red: 0.6439564258, green: 0.8479013801, blue: 0.9977299744, alpha: 1)
+        //self.backgroundColor = #colorLiteral(red: 0.6439564258, green: 0.8479013801, blue: 0.9977299744, alpha: 1)
+        //self.tintColor = #colorLiteral(red: 0.127715386, green: 0.1686877555, blue: 0.2190790727, alpha: 0.9254236356)
+        
+    }
     
-    
-    @IBOutlet weak var Date: UILabel!
+    /*@IBOutlet weak var Date: UILabel!
     @IBOutlet weak var title: UILabel!
     
     @IBOutlet weak var location: UILabel!
@@ -74,6 +80,6 @@ class NotesCell: UITableViewCell {
                     self.location.text = address
                 }
             }
-        }
+        }*/
 
     }
