@@ -45,16 +45,24 @@ class addnotesViewController: UIViewController, CLLocationManagerDelegate,UIImag
         initLocation()     
          // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    //function to start creating note
+        func start() {
+         var navTitle: String?
+        if let currentNote = currentNote{
+            navTitle = String((currentNote.noteName.prefix(upTo: (currentNote.noteName.index((currentNote.noteName.startIndex), offsetBy: (currentNote.noteName.count)/2))))) + "....."
+            newNote = currentNote
+        }else{
+            navTitle = "New Note"
+            newNote = Note(noteName: "", timeStamp: getTimeStamp())
+        }
+        navBar.title = navTitle
+        txtNote.becomeFirstResponder()
+        txtNote.text = newNote?.noteName
+        print("files", newNote?.strFiles)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(releaseFocus))
+        navigationController?.navigationBar.addGestureRecognizer(tap)
+        initCollectionView()
+        
+    }   
 }
