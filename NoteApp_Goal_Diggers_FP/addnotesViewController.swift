@@ -181,4 +181,27 @@ class addnotesViewController: UIViewController, CLLocationManagerDelegate,UIImag
             // failed to record!
         }
     }
+
+func startRecording() {
+        let audioFilename = getDocumentsDirectory().appendingPathComponent("audio\(getTimeStamp()).m4a")
+        recordingSession.accessibilityLabel = audioFilename.lastPathComponent
+
+        let settings = [
+            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+            AVSampleRateKey: 12000,
+            AVNumberOfChannelsKey: 1,
+            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+        ]
+
+        do {
+            audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
+            audioRecorder.delegate = self
+            audioRecorder.record()
+
+        } catch {
+            finishRecording(success: false)
+        }
+    }
+    
+
 }
