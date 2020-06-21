@@ -162,4 +162,23 @@ class addnotesViewController: UIViewController, CLLocationManagerDelegate,UIImag
         return paths[0]
     }
 
+ @IBAction func recordAudio(_ sender: Any) {
+        recordingSession = AVAudioSession.sharedInstance()
+
+        do {
+            try recordingSession.setCategory(.playAndRecord, mode: .default)
+            try recordingSession.setActive(true)
+            recordingSession.requestRecordPermission() { [unowned self] allowed in
+                DispatchQueue.main.async {
+                    if allowed {
+                        self.recordTapped()
+                    } else {
+                        // failed to record!
+                    }
+                }
+            }
+        } catch {
+            // failed to record!
+        }
+    }
 }
