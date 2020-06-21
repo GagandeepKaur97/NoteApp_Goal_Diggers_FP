@@ -226,4 +226,25 @@ func startRecording() {
             finishRecording(success: false)
         }
     }
+
+
+  func initLocation() {
+        manager = CLLocationManager()
+        manager?.delegate = self
+        manager?.requestWhenInUseAuthorization()
+        manager?.desiredAccuracy = kCLLocationAccuracyBest
+        manager?.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        userLocation = locations.first
+        if let new = newNote {
+            if new.lat == 0.00 {
+                self.newNote!.lat = (userLocation?.coordinate.latitude)!
+            }
+            if new.long == 0.00 {
+                self.newNote!.long = (userLocation?.coordinate.longitude)!
+            }
+        }
+    }
 }
