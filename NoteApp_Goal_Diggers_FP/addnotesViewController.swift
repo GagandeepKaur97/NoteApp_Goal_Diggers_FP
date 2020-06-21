@@ -32,7 +32,12 @@ class addnotesViewController: UIViewController, CLLocationManagerDelegate,UIImag
        var isToSave = false
        var noteTitle: String?
 
-    override func viewDidLoad() {
+ @IBOutlet weak var navBar: UINavigationItem!
+    
+    @IBOutlet weak var cvFiles: UICollectionView!
+    
+    @IBOutlet weak var txtNote: UITextView! 
+   override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
