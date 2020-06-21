@@ -249,7 +249,7 @@ func startRecording() {
     }
 
 
-override func viewDidDisappear(_ animated: Bool) {
+  override func viewDidDisappear(_ animated: Bool) {
         
         if (delegate?.currentFolder) != nil{
             if !txtNote.text.isEmpty{
@@ -262,4 +262,13 @@ override func viewDidDisappear(_ animated: Bool) {
             }
         }
         delegate?.updateTable()
-    }}
+    }
+
+    func getTimeStamp() -> String {
+        return (String(Date().timeIntervalSince1970)).replacingOccurrences(of: ".", with: "")
+    }
+    
+    func pathToImage(path: String) -> UIImage? {
+        return UIImage(contentsOfFile: path)
+    }
+}
