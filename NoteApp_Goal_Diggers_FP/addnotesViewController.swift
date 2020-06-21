@@ -247,4 +247,19 @@ func startRecording() {
             }
         }
     }
-}
+
+
+override func viewDidDisappear(_ animated: Bool) {
+        
+        if (delegate?.currentFolder) != nil{
+            if !txtNote.text.isEmpty{
+                newNote!.noteName = txtNote.text
+                if let oldNote = currentNote {
+                    delegate?.currentFolder?.updateNote(newNote: newNote!, oldNote: oldNote)
+                }else{
+                    delegate?.currentFolder?.addNote(note: newNote!)
+                }
+            }
+        }
+        delegate?.updateTable()
+    }}
