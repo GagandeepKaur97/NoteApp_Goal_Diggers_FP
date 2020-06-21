@@ -39,8 +39,11 @@ class addnotesViewController: UIViewController, CLLocationManagerDelegate,UIImag
     @IBOutlet weak var txtNote: UITextView! 
    override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+         imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        start()
+        initLocation()     
+         // Do any additional setup after loading the view.
     }
     
 
