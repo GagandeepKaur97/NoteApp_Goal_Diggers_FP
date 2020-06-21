@@ -64,5 +64,9 @@ class addnotesViewController: UIViewController, CLLocationManagerDelegate,UIImag
         navigationController?.navigationBar.addGestureRecognizer(tap)
         initCollectionView()
         
-    }   
-}
+    }  
+//function to realese focus
+ @objc func releaseFocus() {
+            txtNote.resignFirstResponder()
+    }
+    }
