@@ -69,4 +69,13 @@ class addnotesViewController: UIViewController, CLLocationManagerDelegate,UIImag
  @objc func releaseFocus() {
             txtNote.resignFirstResponder()
     }
-    }
+//initiazation of collection view
+ func initCollectionView() {
+        cvFiles.delegate = self
+        cvFiles.dataSource = self
+        
+        cvFiles.register(UINib(nibName: "ImageCell", bundle: nil), forCellWithReuseIdentifier: "ImageCell")
+        
+        cvFiles.register(UINib(nibName: "AudioCell", bundle: nil), forCellWithReuseIdentifier: "AudioCell")
+    }  
+}
