@@ -15,8 +15,19 @@ class addnotesViewController: UIViewController, CLLocationManagerDelegate,UIImag
       var newNote: NSManagedObject?
     
        var context: NSManagedObjectContext?
-       
-       var categoryName: String?
+        var imagePicker: UIImagePickerController!
+    var alert : UIAlertController?
+    var alert2 : UIAlertController?
+    var delegate : AddNotesTVCTableViewController?
+    var currentNote: Note?
+    var newNote: Note?
+    var manager: CLLocationManager?
+    var userLocation: CLLocation?
+    
+    var audioPlayer: AVAudioPlayer?
+    var recordingSession: AVAudioSession!
+    var audioRecorder: AVAudioRecorder!     
+      var categoryName: String?
        var isNewNote = true
        var isToSave = false
        var noteTitle: String?
