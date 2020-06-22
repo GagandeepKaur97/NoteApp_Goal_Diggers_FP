@@ -9,14 +9,14 @@
 import Foundation
 import MapKit
 
-class CustomAnno: NSObject, MKAnnotation{
-
-    init(coordinate: CLLocationCoordinate2D, identifier: String) {
-        self.coordinate = coordinate
-        self.identifier = identifier
-    }
-
-    var coordinate: CLLocationCoordinate2D
-    var identifier: String
-    
-}
+//class CustomAnno: NSObject, MKAnnotation{
+//
+//    init(coordinate: CLLocationCoordinate2D, identifier: String) {
+//        self.coordinate = coordinate
+//        self.identifier = identifier
+//    }
+//
+//    var coordinate: CLLocationCoordinate2D
+//    var identifier: String
+//    
+//}
