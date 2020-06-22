@@ -7,9 +7,20 @@
 //
 
 import UIKit
+import CoreData
+import AVFoundation
+import CoreLocation
 
-class AddNotesVC: UIViewController {
 
+
+class AddNotesVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate , AVAudioRecorderDelegate{
+
+
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
