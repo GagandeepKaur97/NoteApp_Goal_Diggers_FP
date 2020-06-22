@@ -24,6 +24,7 @@
 		CECF9DB824A145B700592EE1 /* StopButton.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CECF9DB724A145B700592EE1 /* StopButton.jpg */; };
 		CECF9DBA24A145BC00592EE1 /* record.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CECF9DB924A145BC00592EE1 /* record.jpg */; };
 		CECF9DBC24A145C100592EE1 /* imageadd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CECF9DBB24A145C100592EE1 /* imageadd.jpg */; };
+		CECF9DBE24A16FE000592EE1 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF9DBD24A16FE000592EE1 /* MapVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		CECF9DB724A145B700592EE1 /* StopButton.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = StopButton.jpg; sourceTree = "<group>"; };
 		CECF9DB924A145BC00592EE1 /* record.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = record.jpg; sourceTree = "<group>"; };
 		CECF9DBB24A145C100592EE1 /* imageadd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imageadd.jpg; sourceTree = "<group>"; };
+		CECF9DBD24A16FE000592EE1 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				CECF9DA9249C61AC00592EE1 /* customAnno.swift */,
 				CE117A71249441D400BECD9D /* Main.storyboard */,
 				CECF9DB324A0651600592EE1 /* AddNotesVC.swift */,
+				CECF9DBD24A16FE000592EE1 /* MapVC.swift */,
 				CEB3C8402497F6720028CF41 /* AddNotesTVCTableViewController.swift */,
 				CECF9DB124A061C200592EE1 /* Notescell.swift */,
 				CE117A86249578E300BECD9D /* AddCategoryTVC.swift */,
@@ -181,6 +184,7 @@
 				CEB3C8412497F6720028CF41 /* AddNotesTVCTableViewController.swift in Sources */,
 				CE117A6C249441D400BECD9D /* AppDelegate.swift in Sources */,
 				CECF9DAA249C61AC00592EE1 /* customAnno.swift in Sources */,
+				CECF9DBE24A16FE000592EE1 /* MapVC.swift in Sources */,
 				CE117A87249578E300BECD9D /* AddCategoryTVC.swift in Sources */,
 				CE117A76249441D400BECD9D /* NoteApp_Goal_Diggers_FP.xcdatamodeld in Sources */,
 				CE117A6E249441D400BECD9D /* SceneDelegate.swift in Sources */,

@@ -50,11 +50,79 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
     
     
     @IBAction func saveBtn(_ sender: UIButton) {
-       
+       if isNewNote{
+                  
+                  let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Newnotes")
+                  do{
+                      let results = try self.context!.fetch(request)
+                      var alreadyExists = false
+                      if results.count > 0{
+                          for result in results as! [NSManagedObject]{
+                              if Addtitle.text! == result.value(forKey: "title") as! String{
+                                  alreadyExists = true
+                                  break
+                              }
+                          }
+                      }
+                      
+                      if !alreadyExists {
+                          if (Addtitle.text!.isEmpty || addDesc.text! == "Write note...." || addDesc.text!.isEmpty || Addcategory.text!.isEmpty){
+                              // empty field
+                              okAlert(title: "None of the fields can be empty!!")
+                              
+                          }else{
+                              self.addData()
+                              isNewNote = false
+                          }
+                          
+                      } else{
+                          okAlert(title: "Note with name '\(Addtitle.text!)' already exists!")
+                          isNewNote = true
+                      }
+                  }catch{
+                      print(error)
+                  }
+                  
+              }else{
+                  
+                  addData()
+                  
+              }
+          }
+          
+          func addData(){
+              
+              if isNewNote{
+                  newNote = NSEntityDescription.insertNewObject(forEntityName: "Newnotes", into: context!)
+                  
+              }
+              
+              newNote!.setValue(Addtitle.text!, forKey: "title")
+              newNote!.setValue(addDesc.text!, forKey: "desc")
+              newNote!.setValue(categoryName!, forKey: "category")
+              let createdDate =  isNewNote ? Date() : (newNote?.value(forKey: "datetime")! as! Date)
+              newNote!.setValue(createdDate, forKey: "datetime")
+              newNote!.setValue(Addcategory.text!.uppercased(), forKey: "category")
+              let lat = isNewNote ? currentLocation.latitude : newNote?.value(forKey: "lat") as! Double
+              newNote?.setValue(lat, forKey: "lat")
+              let long = isNewNote ? currentLocation.longitude : newNote?.value(forKey: "long") as! Double
+              newNote?.setValue(long, forKey: "long")
+              
+             updateCatagoryList()
+              // save image to file
+             // saveImageToFile()
+              saveData()
+              
+              isToSave = true
+              okAlert(title: isNewNote ? "Note saved successfully!!" : "Updated successfully!!")
+          
+          }
+          
+          
                 
            
         
-    }
+    
     
     
     func okAlert(title: String){
@@ -83,6 +151,43 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
                print(error)
            }
        }
+    
+    
+    func updateCatagoryList(){
+           
+           var catagoryPresent = false
+           let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Categories")
+           request.returnsObjectsAsFaults = false
+           
+           // we find our data
+           do{
+               let results = try context?.fetch(request) as! [NSManagedObject]
+               
+               for r in results{
+                   
+                   if Addcategory.text! == (r.value(forKey: "notename") as! String) {
+                       catagoryPresent = true;
+                       break
+                       
+                   }
+                   
+               }
+           } catch{
+               print("Error2...\(error)")
+           }
+           
+           
+           if !catagoryPresent{
+               
+               let newFolder = NSEntityDescription.insertNewObject(forEntityName: "Categories", into: context!)
+               newFolder.setValue(Addcategory.text!, forKey: "notename")
+               saveData()
+               
+           }
+           
+       }
+       
+       
     /*
     // MARK: - Navigation
 
