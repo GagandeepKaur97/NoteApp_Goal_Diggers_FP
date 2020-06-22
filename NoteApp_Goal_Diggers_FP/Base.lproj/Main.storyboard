@@ -143,10 +143,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="Date" destination="ACb-f9-F4O" id="cCz-hQ-yDT"/>
-                                    <outlet property="Time" destination="Zid-v7-tCy" id="3tf-Vt-775"/>
+                                    <outlet property="lbDate" destination="ACb-f9-F4O" id="K7k-M1-Fua"/>
+                                    <outlet property="lbTime" destination="Zid-v7-tCy" id="FiP-6x-OwA"/>
+                                    <outlet property="lblocation" destination="6uN-T6-dPY" id="pH0-to-lb6"/>
                                     <outlet property="location" destination="6uN-T6-dPY" id="3ou-wL-LL9"/>
-                                    <outlet property="title" destination="8IJ-mQ-Op0" id="Wl0-3d-vZt"/>
                                     <segue destination="ldb-0V-dlU" kind="show" id="4kp-rR-FdL"/>
                                 </connections>
                             </tableViewCell>

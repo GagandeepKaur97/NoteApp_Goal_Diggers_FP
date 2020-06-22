@@ -45,9 +45,9 @@ class AddNotesTVCTableViewController: UITableViewController {
 
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell") as! NotesCell
+let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell") as! Notescell
                //            print(notes![indexPath.row].value(forKey: "title") as! String)
-          //     cell.setData(note: notes![indexPath.row])
+               cell.setData(note: notes![indexPath.row])
                return cell
                
     }
@@ -122,7 +122,7 @@ class AddNotesTVCTableViewController: UITableViewController {
             if let destination = segue.destination as? AddNotesTVCTableViewController{
                 destination.categoryName = self.categoryName
                 
-                if let noteCell = sender as?  NotesCell{
+                if let noteCell = sender as?  Notescell{
                     // old note
                 //    destination.isNewNote = false
               //      destination.noteTitle = noteCell.title.text

@@ -23,6 +23,7 @@ class AddCategoryTVC: UITableViewController , UISearchBarDelegate{
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         mySearchBar.delegate = self
