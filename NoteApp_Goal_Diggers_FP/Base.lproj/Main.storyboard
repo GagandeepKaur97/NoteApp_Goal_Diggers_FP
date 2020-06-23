@@ -250,13 +250,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n8K-gE-o4y">
-                                <rect key="frame" x="167" y="406" width="116" height="140"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="86i-La-q52"/>
-                                    <constraint firstAttribute="height" constant="50" id="DrH-tr-VFK"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzV-Xb-Tnt">
                                 <rect key="frame" x="203" y="554" width="45" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -301,7 +294,6 @@
                         <outlet property="Addcategory" destination="u9Z-iC-r2e" id="GLh-ph-GUf"/>
                         <outlet property="Addtitle" destination="LOg-eH-KkT" id="BaH-nh-Myt"/>
                         <outlet property="addDesc" destination="fHD-zE-4BK" id="aIm-Li-8gF"/>
-                        <outlet property="addImage" destination="n8K-gE-o4y" id="lg7-QB-Ijj"/>
                         <outlet property="recordbtn" destination="fzV-Xb-Tnt" id="lFh-O5-mW1"/>
                         <outlet property="stopbtn" destination="7S7-Kz-DMx" id="vP3-vB-Dnc"/>
                     </connections>
