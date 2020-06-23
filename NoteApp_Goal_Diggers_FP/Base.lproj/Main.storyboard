@@ -180,7 +180,7 @@
         <!--Notes-->
         <scene sceneID="xsW-wz-AVg">
             <objects>
-                <viewController id="ldb-0V-dlU" customClass="addnotesViewController" customModule="NoteApp_Goal_Diggers_FP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ldb-0V-dlU" customClass="AddNotesVC" customModule="NoteApp_Goal_Diggers_FP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pUF-9p-WEV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -226,6 +226,9 @@
                                     <constraint firstAttribute="height" constant="40" id="pwS-6k-8Zp"/>
                                 </constraints>
                                 <state key="normal" image="expand.jpg"/>
+                                <connections>
+                                    <segue destination="Ho0-cj-k6O" kind="show" id="30m-Zf-2L2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Hm-Rn-XYL">
                                 <rect key="frame" x="187" y="958" width="41" height="40"/>
@@ -243,12 +246,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7S7-Kz-DMx">
-                                <rect key="frame" x="328" y="570" width="46" height="30"/>
+                                <rect key="frame" x="328" y="570" width="66" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n8K-gE-o4y">
-                                <rect key="frame" x="167" y="406" width="116" height="128"/>
+                                <rect key="frame" x="167" y="406" width="116" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="86i-La-q52"/>
                                     <constraint firstAttribute="height" constant="50" id="DrH-tr-VFK"/>
@@ -298,6 +301,9 @@
                         <outlet property="Addcategory" destination="u9Z-iC-r2e" id="GLh-ph-GUf"/>
                         <outlet property="Addtitle" destination="LOg-eH-KkT" id="BaH-nh-Myt"/>
                         <outlet property="addDesc" destination="fHD-zE-4BK" id="aIm-Li-8gF"/>
+                        <outlet property="addImage" destination="n8K-gE-o4y" id="lg7-QB-Ijj"/>
+                        <outlet property="recordbtn" destination="fzV-Xb-Tnt" id="lFh-O5-mW1"/>
+                        <outlet property="stopbtn" destination="7S7-Kz-DMx" id="vP3-vB-Dnc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="com-Sy-Gc1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -313,7 +319,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SkA-9F-mk5">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

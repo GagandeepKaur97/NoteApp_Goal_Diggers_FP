@@ -17,41 +17,124 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
 
 
     @IBOutlet weak var Addtitle: UITextField!
+    @IBOutlet weak var recordbtn: UIButton!
     
+    @IBOutlet weak var stopbtn: UIButton!
+    @IBOutlet weak var addImage: UIImageView!
     @IBOutlet weak var addDesc: UITextView!
     @IBOutlet weak var Addcategory: UITextField!
     var newNote: NSManagedObject?
     
+    var isPlaying = false
+    var isRecording = false
+    var recordingSession: AVAudioSession!
+    var audioRecorder:AVAudioRecorder!
+    var audioPlayer: AVAudioPlayer!
+    var records = 0
     
+
     var context: NSManagedObjectContext?
-    
+
     var categoryName: String?
     var isNewNote = true
     var isToSave = false
     var noteTitle: String?
-    
+
     var locationManager = CLLocationManager()
     var currentLocation = CLLocationCoordinate2D()
-    
+
      let mainColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
- Addcategory.text = categoryName!
-        addDesc.delegate = self as! UITextViewDelegate
-        
+       stopbtn.layer.cornerRadius = 30
+       recordbtn.layer.cornerRadius = 30
+// Addcategory.text = categoryName!
+//        addDesc.delegate = self as? UITextViewDelegate
+ recordingSession = AVAudioSession.sharedInstance()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
         // Do any additional setup after loading the view.
-    }
     
+//     if !isNewNote{
+//              recordbtn.isHidden = false
+//                showCurrentNote(noteTitle!)
+//                // show all data to user
+//
+//                icMap.isEnabled = true
+//                navigationItem.title = "Edit note"
+//            }else{
+//               recordbtn.isHidden = true
+//                icMap.isEnabled = false
+//                AVAudioSession.sharedInstance().requestRecordPermission { (granted) in
+//
+//                    if !granted{
+//
+//
+//
+//                    }
+//
+//
+//                }
+//            }
+            
+//            let hideKeyboard = UITapGestureRecognizer(target: self, action: #selector(onTapped))
+//            view.addGestureRecognizer(hideKeyboard)
+//
+//            // tap gesture for seklecting image
+//            let tapG = UITapGestureRecognizer(target: self, action: #selector(choosePhoto))
+//           addImage.addGestureRecognizer(tapG)
+            
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.startUpdatingLocation()
+            
+    //        recordingSession = AVAudioSession.sharedInstance()
 
-    
-    
-    @IBAction func saveBtn(_ sender: UIButton) {
+            do {
+                try recordingSession.setCategory(.playAndRecord, mode: .default)
+                try recordingSession.setActive(true)
+                
+            } catch {
+                // failed to record!
+        }
+        
+//    @objc func onTapped(){
+//          Addtitle.resignFirstResponder()
+//        addDesc.resignFirstResponder()
+//        Addcategory.resignFirstResponder()
+//       }
+
+       //get user's current location
+       func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+           currentLocation = manager.location!.coordinate
+       }
+
+       func showCurrentNote(_ title: String){
+
+           Addtitle.isEnabled = false
+           let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Notes")
+           request.predicate = NSPredicate(format: "title = %@", title)
+
+           do{
+               let results = try context!.fetch(request)
+               newNote = results[0] as! NSManagedObject
+
+              Addtitle.text = newNote!.value(forKey: "title") as! String
+               addDesc.text = newNote!.value(forKey: "desc") as! String
+//               noteImageView.image = UIImage(contentsOfFile: getFilePath("/\(txtTitle.text!)_img.txt"))
+//
+           }catch{
+               print("unable to fech note-data")
+           }
+       }
+
+
+
+//  @IBAction func saveBtn(_ sender: UIButton) {
        if isNewNote{
-                  
+
                   let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Newnotes")
                   do{
                       let results = try self.context!.fetch(request)
@@ -64,17 +147,17 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
                               }
                           }
                       }
-                      
+
                       if !alreadyExists {
                           if (Addtitle.text!.isEmpty || addDesc.text! == "Write note...." || addDesc.text!.isEmpty || Addcategory.text!.isEmpty){
                               // empty field
                               okAlert(title: "None of the fields can be empty!!")
-                              
+
                           }else{
-                              self.addData()
+               //               self.addData()
                               isNewNote = false
                           }
-                          
+
                       } else{
                           okAlert(title: "Note with name '\(Addtitle.text!)' already exists!")
                           isNewNote = true
@@ -82,21 +165,21 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
                   }catch{
                       print(error)
                   }
-                  
+
               }else{
-                  
+
                   addData()
-                  
+
               }
           }
-          
+
           func addData(){
-              
+
               if isNewNote{
                   newNote = NSEntityDescription.insertNewObject(forEntityName: "Newnotes", into: context!)
-                  
+
               }
-              
+
               newNote!.setValue(Addtitle.text!, forKey: "title")
               newNote!.setValue(addDesc.text!, forKey: "desc")
               newNote!.setValue(categoryName!, forKey: "category")
@@ -107,30 +190,30 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
               newNote?.setValue(lat, forKey: "lat")
               let long = isNewNote ? currentLocation.longitude : newNote?.value(forKey: "long") as! Double
               newNote?.setValue(long, forKey: "long")
-              
+
              updateCatagoryList()
               // save image to file
              // saveImageToFile()
               saveData()
-              
+
               isToSave = true
               okAlert(title: isNewNote ? "Note saved successfully!!" : "Updated successfully!!")
-          
+
           }
-          
-          
-                
-           
-        
-    
-    
-    
+
+
+
+
+
+
+
+
     func okAlert(title: String){
            let titleString = NSAttributedString(string: title, attributes: [NSAttributedString.Key.foregroundColor: mainColor, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16)])
-           
+
            let alertController = UIAlertController(title: "" , message: nil, preferredStyle: .alert)
            alertController.setValue(titleString, forKey: "attributedTitle")
-           
+
            let okAction = UIAlertAction(title: "Okay", style: .default) { (action) in
                if self.isToSave{
                    self.navigationController?.popViewController(animated: true)
@@ -139,11 +222,11 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
            }
            okAction.setValue(UIColor.black, forKey: "titleTextColor")
            alertController.addAction(okAction)
-           
+
            self.present(alertController, animated: true)
-           
+
        }
-       
+
        func saveData(){
            do{
                try context!.save()
@@ -153,41 +236,43 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
        }
     
     
+
+
     func updateCatagoryList(){
-           
+
            var catagoryPresent = false
            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Categories")
            request.returnsObjectsAsFaults = false
-           
+
            // we find our data
            do{
                let results = try context?.fetch(request) as! [NSManagedObject]
-               
+
                for r in results{
-                   
+
                    if Addcategory.text! == (r.value(forKey: "notename") as! String) {
                        catagoryPresent = true;
                        break
-                       
+
                    }
-                   
+
                }
            } catch{
                print("Error2...\(error)")
            }
-           
-           
+
+
            if !catagoryPresent{
-               
+
                let newFolder = NSEntityDescription.insertNewObject(forEntityName: "Categories", into: context!)
                newFolder.setValue(Addcategory.text!, forKey: "notename")
                saveData()
-               
+
            }
-           
+
        }
-       
-       
+
+
     /*
     // MARK: - Navigation
 
@@ -197,7 +282,10 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
         // Pass the selected object to the new view controller.
     }
     */
-    
-    
+
+
 
 }
+    
+
+
