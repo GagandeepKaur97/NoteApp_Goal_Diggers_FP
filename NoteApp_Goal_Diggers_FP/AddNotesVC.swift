@@ -15,6 +15,7 @@ import CoreLocation
 
 class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, CLLocationManagerDelegate , AVAudioRecorderDelegate{
 
+    @IBOutlet weak var lbl: UILabel!
     @IBOutlet weak var txtTitle: UITextField!
     @IBOutlet weak var recordButton: UIButton!
     
@@ -44,7 +45,7 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
       
       var locationManager = CLLocationManager()
       var currentLocation = CLLocationCoordinate2D()
-      let mainColor = #colorLiteral(red: 0.200271368, green: 0.4414930344, blue: 0.4522026777, alpha: 0.6665507277)
+      let mainColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
       
       override func viewDidLoad() {
           super.viewDidLoad()

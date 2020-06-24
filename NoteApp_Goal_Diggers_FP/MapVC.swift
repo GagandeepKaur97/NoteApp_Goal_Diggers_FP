@@ -13,6 +13,7 @@ import CoreLocation
 class MapVC: UIViewController , MKMapViewDelegate, CLLocationManagerDelegate  {
     
     
+    @IBOutlet weak var navigationButton: UIButton!
     @IBOutlet weak var mapview: MKMapView!
     
     

@@ -308,6 +308,7 @@
                         <outlet property="addDesc" destination="fHD-zE-4BK" id="aIm-Li-8gF"/>
                         <outlet property="catagoryTextField" destination="u9Z-iC-r2e" id="EnR-iu-kLS"/>
                         <outlet property="icMap" destination="v4Q-V8-Z0S" id="geB-vW-Vss"/>
+                        <outlet property="lbl" destination="jZV-Ol-Wub" id="qJ4-bi-DLu"/>
                         <outlet property="noteImageView" destination="ps2-EP-MZF" id="AxF-7D-SH1"/>
                         <outlet property="playButton" destination="7S7-Kz-DMx" id="FJO-8f-4YW"/>
                         <outlet property="recordButton" destination="fzV-Xb-Tnt" id="udX-jD-2IG"/>
@@ -351,7 +352,7 @@
             </objects>
             <point key="canvasLocation" x="3448" y="809"/>
         </scene>
-        <!--MapVC-->
+        <!--Title-->
         <scene sceneID="Qv9-9L-Mfg">
             <objects>
                 <viewController id="Pof-bD-6S1" customClass="MapVC" customModule="NoteApp_Goal_Diggers_FP" customModuleProvider="target" sceneMemberID="viewController">
@@ -362,18 +363,18 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" rotateEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="efa-Ak-vBK">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5P-Vi-V4j">
-                                <rect key="frame" x="355" y="681" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5P-Vi-V4j">
+                                <rect key="frame" x="369" y="685" width="20" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Buttons"/>
+                                <state key="normal" image="stop.circle.fill" catalog="system"/>
                                 <connections>
                                     <action selector="btnShowRoute:" destination="Pof-bD-6S1" eventType="touchUpInside" id="Z2h-AI-8Vb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffZ-mT-ywj">
-                                <rect key="frame" x="351" y="738" width="55" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffZ-mT-ywj">
+                                <rect key="frame" x="369" y="742" width="21" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Buttonn"/>
+                                <state key="normal" image="paperplane.fill" catalog="system"/>
                                 <connections>
                                     <action selector="navButtonPressed:" destination="Pof-bD-6S1" eventType="touchUpInside" id="Qct-m5-AWj"/>
                                 </connections>
@@ -388,9 +389,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="INU-6p-Q29"/>
                     </view>
-                    <navigationItem key="navigationItem" id="vhi-Wt-o5y"/>
+                    <navigationItem key="navigationItem" title="Title" id="8QN-84-bMW"/>
                     <connections>
                         <outlet property="mapview" destination="efa-Ak-vBK" id="Ngo-0X-EUC"/>
+                        <outlet property="navigationButton" destination="8QN-84-bMW" id="HKO-fJ-T4X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XVL-i0-pZg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -426,6 +428,7 @@
         <image name="plus.rectangle.fill" catalog="system" width="64" height="46"/>
         <image name="record.jpg" width="82" height="85"/>
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
+        <image name="stop.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="c3O-EC-cfb"/>
