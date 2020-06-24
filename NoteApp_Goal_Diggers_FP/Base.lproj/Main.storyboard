@@ -235,28 +235,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7S7-Kz-DMx">
-                                <rect key="frame" x="262" y="635" width="66" height="85"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="66" id="8FT-X8-9Q2"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7S7-Kz-DMx">
+                                <rect key="frame" x="224" y="635" width="104" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="play" image="StopButton.jpg"/>
                                 <connections>
                                     <action selector="playButtonPressed:" destination="ldb-0V-dlU" eventType="touchUpInside" id="pHl-Ql-HOA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzV-Xb-Tnt">
-                                <rect key="frame" x="87" y="636" width="135" height="85"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzV-Xb-Tnt">
+                                <rect key="frame" x="49" y="636" width="135" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="record" image="record.jpg"/>
                                 <connections>
                                     <action selector="recordButtonPressed:" destination="ldb-0V-dlU" eventType="touchUpInside" id="rm6-xW-Yct"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="imageadd.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ps2-EP-MZF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imageadd.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ps2-EP-MZF">
                                 <rect key="frame" x="71" y="489" width="57" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPe-AK-0hu">
-                                <rect key="frame" x="163" y="489" width="206" height="85"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPe-AK-0hu">
+                                <rect key="frame" x="163" y="489" width="142" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="expand" image="expand.jpg"/>
                                 <connections>
                                     <segue destination="Ho0-cj-k6O" kind="show" id="Dv4-ah-g5j"/>
@@ -267,29 +268,22 @@
                         <constraints>
                             <constraint firstItem="hJ9-eg-bhp" firstAttribute="bottom" secondItem="LOg-eH-KkT" secondAttribute="bottom" constant="648" id="6Gu-D9-cUJ"/>
                             <constraint firstItem="lCa-sd-i7U" firstAttribute="leading" secondItem="hJ9-eg-bhp" secondAttribute="leading" constant="20" id="92n-u1-n2G"/>
-                            <constraint firstItem="hJ9-eg-bhp" firstAttribute="trailing" secondItem="TPe-AK-0hu" secondAttribute="trailing" constant="45" id="9Kr-sK-aa8"/>
                             <constraint firstItem="hJ9-eg-bhp" firstAttribute="trailing" secondItem="lCa-sd-i7U" secondAttribute="trailing" constant="20" id="Aq1-wp-C2d"/>
                             <constraint firstItem="fHD-zE-4BK" firstAttribute="leading" secondItem="hJ9-eg-bhp" secondAttribute="leading" constant="20" id="BMb-iH-pN2"/>
                             <constraint firstItem="u9Z-iC-r2e" firstAttribute="top" secondItem="LOg-eH-KkT" secondAttribute="bottom" constant="15" id="D6w-0v-K1f"/>
                             <constraint firstItem="lCa-sd-i7U" firstAttribute="leading" secondItem="hJ9-eg-bhp" secondAttribute="leading" constant="20" id="EOk-rl-SPF"/>
-                            <constraint firstItem="fzV-Xb-Tnt" firstAttribute="leading" secondItem="hJ9-eg-bhp" secondAttribute="leading" constant="87" id="FI8-5S-8xe"/>
                             <constraint firstItem="fHD-zE-4BK" firstAttribute="top" secondItem="u9Z-iC-r2e" secondAttribute="bottom" constant="20" id="FzG-h9-pE9"/>
-                            <constraint firstItem="ps2-EP-MZF" firstAttribute="leading" secondItem="hJ9-eg-bhp" secondAttribute="leading" constant="71" id="KJX-hr-qLT"/>
                             <constraint firstItem="LOg-eH-KkT" firstAttribute="leading" secondItem="hJ9-eg-bhp" secondAttribute="leading" constant="20" id="NzD-ZW-sfB"/>
-                            <constraint firstItem="7S7-Kz-DMx" firstAttribute="leading" secondItem="fzV-Xb-Tnt" secondAttribute="trailing" constant="40" id="PbM-Pk-Nwd"/>
                             <constraint firstItem="hJ9-eg-bhp" firstAttribute="trailing" secondItem="LOg-eH-KkT" secondAttribute="trailing" constant="20" id="TCP-m1-WAg"/>
                             <constraint firstItem="hJ9-eg-bhp" firstAttribute="bottom" secondItem="u9Z-iC-r2e" secondAttribute="bottom" constant="579" id="bVn-J3-ZtL"/>
                             <constraint firstItem="lCa-sd-i7U" firstAttribute="bottom" secondItem="hJ9-eg-bhp" secondAttribute="bottom" constant="10" id="iw4-qp-m8u"/>
-                            <constraint firstItem="TPe-AK-0hu" firstAttribute="leading" secondItem="ps2-EP-MZF" secondAttribute="trailing" constant="35" id="jpp-VZ-efQ"/>
                             <constraint firstItem="hJ9-eg-bhp" firstAttribute="trailing" secondItem="lCa-sd-i7U" secondAttribute="trailing" constant="20" id="l6Y-HT-fwH"/>
                             <constraint firstItem="u9Z-iC-r2e" firstAttribute="leading" secondItem="hJ9-eg-bhp" secondAttribute="leading" constant="20" id="p7r-id-qgh"/>
                             <constraint firstItem="jZV-Ol-Wub" firstAttribute="leading" secondItem="hJ9-eg-bhp" secondAttribute="leading" constant="30" id="paf-Ql-bMa"/>
                             <constraint firstItem="jZV-Ol-Wub" firstAttribute="top" secondItem="fHD-zE-4BK" secondAttribute="bottom" constant="50" id="q9o-lQ-1nt"/>
-                            <constraint firstItem="7S7-Kz-DMx" firstAttribute="leading" secondItem="fzV-Xb-Tnt" secondAttribute="trailing" constant="40" id="rlL-bX-vos"/>
                             <constraint firstItem="hJ9-eg-bhp" firstAttribute="bottom" secondItem="fHD-zE-4BK" secondAttribute="bottom" constant="415" id="shR-5N-tFk"/>
                             <constraint firstItem="hJ9-eg-bhp" firstAttribute="trailing" secondItem="u9Z-iC-r2e" secondAttribute="trailing" constant="20" id="wD5-4k-41R"/>
                             <constraint firstItem="LOg-eH-KkT" firstAttribute="top" secondItem="hJ9-eg-bhp" secondAttribute="top" constant="30" id="ycW-WM-cwS"/>
-                            <constraint firstItem="hJ9-eg-bhp" firstAttribute="trailing" secondItem="7S7-Kz-DMx" secondAttribute="trailing" constant="86" id="yhV-AY-qKN"/>
                             <constraint firstItem="hJ9-eg-bhp" firstAttribute="trailing" secondItem="fHD-zE-4BK" secondAttribute="trailing" constant="20" id="zvy-dP-aNa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hJ9-eg-bhp"/>
