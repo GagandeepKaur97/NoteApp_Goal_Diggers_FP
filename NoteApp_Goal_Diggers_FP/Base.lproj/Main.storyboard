@@ -235,32 +235,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7S7-Kz-DMx">
-                                <rect key="frame" x="328" y="570" width="66" height="69"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7S7-Kz-DMx">
+                                <rect key="frame" x="309" y="562" width="104" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" id="8FT-X8-9Q2"/>
                                 </constraints>
-                                <state key="normal" title="play"/>
+                                <state key="normal" title="play" image="StopButton.jpg"/>
                                 <connections>
                                     <action selector="playButtonPressed:" destination="ldb-0V-dlU" eventType="touchUpInside" id="pHl-Ql-HOA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzV-Xb-Tnt">
-                                <rect key="frame" x="203" y="554" width="45" height="64"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzV-Xb-Tnt">
+                                <rect key="frame" x="158" y="544" width="135" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="record"/>
+                                <state key="normal" title="record" image="record.jpg"/>
                                 <connections>
                                     <action selector="recordButtonPressed:" destination="ldb-0V-dlU" eventType="touchUpInside" id="rm6-xW-Yct"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ps2-EP-MZF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imageadd.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ps2-EP-MZF">
                                 <rect key="frame" x="162" y="460" width="138" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPe-AK-0hu">
-                                <rect key="frame" x="336" y="486" width="51" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPe-AK-0hu">
+                                <rect key="frame" x="291" y="459" width="142" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="expand"/>
+                                <state key="normal" title="expand" image="expand.jpg"/>
                                 <connections>
                                     <segue destination="Ho0-cj-k6O" kind="show" id="Dv4-ah-g5j"/>
                                 </connections>
@@ -413,10 +413,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="StopButton.jpg" width="70" height="85"/>
+        <image name="expand.jpg" width="82" height="85"/>
+        <image name="imageadd.jpg" width="57" height="46"/>
         <image name="paperplane.fill" catalog="system" width="64" height="60"/>
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
         <image name="plus.rectangle.fill" catalog="system" width="64" height="46"/>
-        <image name="record.jpg" width="820" height="860"/>
+        <image name="record.jpg" width="82" height="85"/>
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
