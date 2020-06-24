@@ -119,14 +119,14 @@ let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell") as! Notesce
       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             // Get the new view controller using segue.destination.
             // Pass the selected object to the new view controller.
-            if let destination = segue.destination as? AddNotesTVCTableViewController{
+            if let destination = segue.destination as? AddNotesVC{    //      destination.noteTitle = noteCell.title.text
+                    
+             
                 destination.categoryName = self.categoryName
                 
                 if let noteCell = sender as?  Notescell{
                     // old note
-                //    destination.isNewNote = false
-              //      destination.noteTitle = noteCell.title.text
-                    
+                    //    destination.isNewNote = false
                 }
                 
                 if let btn = sender as? UIBarButtonItem{

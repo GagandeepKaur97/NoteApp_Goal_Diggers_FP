@@ -208,7 +208,6 @@
                                 <state key="normal" title="SAVE"/>
                                 <connections>
                                     <action selector="btnSave:" destination="ldb-0V-dlU" eventType="touchUpInside" id="A2S-rn-7q6"/>
-                                    <action selector="saveBtn:" destination="ldb-0V-dlU" eventType="touchUpInside" id="FQZ-8f-gcR"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZV-Ol-Wub">
@@ -303,17 +302,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="Addcategory" destination="u9Z-iC-r2e" id="GLh-ph-GUf"/>
-                        <outlet property="Addtitle" destination="LOg-eH-KkT" id="BaH-nh-Myt"/>
-                        <outlet property="addDesc" destination="fHD-zE-4BK" id="aIm-Li-8gF"/>
                         <outlet property="catagoryTextField" destination="u9Z-iC-r2e" id="EnR-iu-kLS"/>
                         <outlet property="icMap" destination="v4Q-V8-Z0S" id="geB-vW-Vss"/>
                         <outlet property="lbl" destination="jZV-Ol-Wub" id="qJ4-bi-DLu"/>
                         <outlet property="noteImageView" destination="ps2-EP-MZF" id="AxF-7D-SH1"/>
                         <outlet property="playButton" destination="7S7-Kz-DMx" id="FJO-8f-4YW"/>
                         <outlet property="recordButton" destination="fzV-Xb-Tnt" id="udX-jD-2IG"/>
-                        <outlet property="recordbtn" destination="fzV-Xb-Tnt" id="lFh-O5-mW1"/>
-                        <outlet property="stopbtn" destination="7S7-Kz-DMx" id="vP3-vB-Dnc"/>
                         <outlet property="txtDescription" destination="fHD-zE-4BK" id="9sH-Yy-jCb"/>
                         <outlet property="txtTitle" destination="LOg-eH-KkT" id="9Ht-Mx-ZiH"/>
                     </connections>

@@ -50,40 +50,40 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
       override func viewDidLoad() {
           super.viewDidLoad()
      
-         // Do any additional setup after loading the view.
-         
+//          Do any additional setup after loading the view.
+
          catagoryTextField.text = categoryName!
          recordButton.layer.cornerRadius = 30
          playButton.layer.cornerRadius = 30
          txtDescription.delegate = self
-         
+
           recordingSession = AVAudioSession.sharedInstance()
-         
+
          let appDelegate = UIApplication.shared.delegate as! AppDelegate
          context = appDelegate.persistentContainer.viewContext
-         
+
          //check if it is new note or note to be edit.
          if !isNewNote{
              playButton.isHidden = false
              showCurrentNote(noteTitle!)
              // show all data to user
-            
+
              icMap.isEnabled = true
              navigationItem.title = "Edit note"
          }else{
              playButton.isHidden = true
              icMap.isEnabled = false
              AVAudioSession.sharedInstance().requestRecordPermission { (granted) in
-                 
+
                  if !granted{
-                     
-                     
-                     
+
+
+
                  }
-                 
-                 
+
+
              }
-         }
+    }
          
          let hideKeyboard = UITapGestureRecognizer(target: self, action: #selector(onTapped))
          view.addGestureRecognizer(hideKeyboard)
@@ -122,7 +122,7 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
      func showCurrentNote(_ title: String){
          
          txtTitle.isEnabled = false
-         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Notes")
+         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Newnotes")
          request.predicate = NSPredicate(format: "title = %@", title)
          
          do{
@@ -130,7 +130,7 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
              newNote = results[0] as! NSManagedObject
              
              txtTitle.text = newNote!.value(forKey: "title") as! String
-             txtDescription.text = newNote!.value(forKey: "descp") as! String
+             txtDescription.text = newNote!.value(forKey: "desc") as! String
              noteImageView.image = UIImage(contentsOfFile: getFilePath("/\(txtTitle.text!)_img.txt"))
              
          }catch{
@@ -218,7 +218,7 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
          
          if isNewNote{
              
-             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Notes")
+             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Newnotes")
              do{
                  let results = try self.context!.fetch(request)
                  var alreadyExists = false
@@ -259,12 +259,12 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
      func addData(){
          
          if isNewNote{
-             newNote = NSEntityDescription.insertNewObject(forEntityName: "Notes", into: context!)
+             newNote = NSEntityDescription.insertNewObject(forEntityName: "Newnotes", into: context!)
              
          }
          
          newNote!.setValue(txtTitle.text!, forKey: "title")
-         newNote!.setValue(txtDescription.text!, forKey: "descp")
+         newNote!.setValue(txtDescription.text!, forKey: "desc")
          newNote!.setValue(categoryName!, forKey: "category")
          let createdDate =  isNewNote ? Date() : (newNote?.value(forKey: "dateTime")! as! Date)
          newNote!.setValue(createdDate, forKey: "dateTime")
@@ -324,7 +324,7 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
              
              for r in results{
                  
-                 if catagoryTextField.text! == (r.value(forKey: "catname") as! String) {
+                 if catagoryTextField.text! == (r.value(forKey: "notename") as! String) {
                      catagoryPresent = true;
                      break
                      
@@ -339,7 +339,7 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
          if !catagoryPresent{
              
              let newFolder = NSEntityDescription.insertNewObject(forEntityName: "Categories", into: context!)
-             newFolder.setValue(catagoryTextField.text!, forKey: "catname")
+             newFolder.setValue(catagoryTextField.text!, forKey: "notename")
              saveData()
              
          }
