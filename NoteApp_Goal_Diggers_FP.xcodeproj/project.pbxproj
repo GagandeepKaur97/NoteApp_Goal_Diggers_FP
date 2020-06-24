@@ -20,10 +20,6 @@
 		CECF9DAA249C61AC00592EE1 /* customAnno.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF9DA9249C61AC00592EE1 /* customAnno.swift */; };
 		CECF9DB224A061C200592EE1 /* Notescell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF9DB124A061C200592EE1 /* Notescell.swift */; };
 		CECF9DB424A0651600592EE1 /* AddNotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF9DB324A0651600592EE1 /* AddNotesVC.swift */; };
-		CECF9DB624A145B200592EE1 /* expand.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CECF9DB524A145B200592EE1 /* expand.jpg */; };
-		CECF9DB824A145B700592EE1 /* StopButton.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CECF9DB724A145B700592EE1 /* StopButton.jpg */; };
-		CECF9DBA24A145BC00592EE1 /* record.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CECF9DB924A145BC00592EE1 /* record.jpg */; };
-		CECF9DBC24A145C100592EE1 /* imageadd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CECF9DBB24A145C100592EE1 /* imageadd.jpg */; };
 		CECF9DBE24A16FE000592EE1 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF9DBD24A16FE000592EE1 /* MapVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,10 +39,6 @@
 		CECF9DA9249C61AC00592EE1 /* customAnno.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customAnno.swift; sourceTree = "<group>"; };
 		CECF9DB124A061C200592EE1 /* Notescell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notescell.swift; sourceTree = "<group>"; };
 		CECF9DB324A0651600592EE1 /* AddNotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotesVC.swift; sourceTree = "<group>"; };
-		CECF9DB524A145B200592EE1 /* expand.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = expand.jpg; sourceTree = "<group>"; };
-		CECF9DB724A145B700592EE1 /* StopButton.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = StopButton.jpg; sourceTree = "<group>"; };
-		CECF9DB924A145BC00592EE1 /* record.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = record.jpg; sourceTree = "<group>"; };
-		CECF9DBB24A145C100592EE1 /* imageadd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imageadd.jpg; sourceTree = "<group>"; };
 		CECF9DBD24A16FE000592EE1 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,10 +84,6 @@
 				CE117A86249578E300BECD9D /* AddCategoryTVC.swift */,
 				CE117A77249441D700BECD9D /* Assets.xcassets */,
 				CE117A79249441D700BECD9D /* LaunchScreen.storyboard */,
-				CECF9DB724A145B700592EE1 /* StopButton.jpg */,
-				CECF9DB524A145B200592EE1 /* expand.jpg */,
-				CECF9DB924A145BC00592EE1 /* record.jpg */,
-				CECF9DBB24A145C100592EE1 /* imageadd.jpg */,
 				CECF9DA7249C52C800592EE1 /* notebook.jpg */,
 				CE117A7C249441D700BECD9D /* Info.plist */,
 				CE117A74249441D400BECD9D /* NoteApp_Goal_Diggers_FP.xcdatamodeld */,
@@ -162,13 +150,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CECF9DA8249C52C800592EE1 /* notebook.jpg in Resources */,
-				CECF9DB624A145B200592EE1 /* expand.jpg in Resources */,
-				CECF9DBA24A145BC00592EE1 /* record.jpg in Resources */,
 				CE117A7B249441D700BECD9D /* LaunchScreen.storyboard in Resources */,
-				CECF9DB824A145B700592EE1 /* StopButton.jpg in Resources */,
 				CE117A78249441D700BECD9D /* Assets.xcassets in Resources */,
 				CE117A73249441D400BECD9D /* Main.storyboard in Resources */,
-				CECF9DBC24A145C100592EE1 /* imageadd.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

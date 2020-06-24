@@ -206,6 +206,7 @@
                                 <rect key="frame" x="20" y="744" width="374" height="79"/>
                                 <state key="normal" title="SAVE"/>
                                 <connections>
+                                    <action selector="btnSave:" destination="ldb-0V-dlU" eventType="touchUpInside" id="A2S-rn-7q6"/>
                                     <action selector="saveBtn:" destination="ldb-0V-dlU" eventType="touchUpInside" id="FQZ-8f-gcR"/>
                                 </connections>
                             </button>
@@ -218,17 +219,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8B4-HE-bAh">
                                 <rect key="frame" x="192" y="460" width="30" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6J-NC-XcI">
-                                <rect key="frame" x="354" y="449" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="YCa-gw-kh8"/>
-                                    <constraint firstAttribute="height" constant="40" id="pwS-6k-8Zp"/>
-                                </constraints>
-                                <state key="normal" image="expand.jpg"/>
-                                <connections>
-                                    <segue destination="Ho0-cj-k6O" kind="show" id="30m-Zf-2L2"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Hm-Rn-XYL">
                                 <rect key="frame" x="187" y="958" width="41" height="40"/>
@@ -245,25 +235,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7S7-Kz-DMx">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7S7-Kz-DMx">
                                 <rect key="frame" x="328" y="570" width="66" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="8FT-X8-9Q2"/>
+                                </constraints>
+                                <state key="normal" title="play"/>
+                                <connections>
+                                    <action selector="playButtonPressed:" destination="ldb-0V-dlU" eventType="touchUpInside" id="pHl-Ql-HOA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzV-Xb-Tnt">
                                 <rect key="frame" x="203" y="554" width="45" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="record"/>
+                                <connections>
+                                    <action selector="recordButtonPressed:" destination="ldb-0V-dlU" eventType="touchUpInside" id="rm6-xW-Yct"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upp-fb-2Om">
-                                <rect key="frame" x="179" y="451" width="72" height="30"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ps2-EP-MZF">
+                                <rect key="frame" x="162" y="460" width="138" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="add image"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPe-AK-0hu">
+                                <rect key="frame" x="336" y="486" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="expand"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="lCa-sd-i7U" firstAttribute="top" secondItem="V6J-NC-XcI" secondAttribute="bottom" constant="60" id="58z-kN-e1V"/>
                             <constraint firstItem="hJ9-eg-bhp" firstAttribute="bottom" secondItem="LOg-eH-KkT" secondAttribute="bottom" constant="648" id="6Gu-D9-cUJ"/>
                             <constraint firstItem="lCa-sd-i7U" firstAttribute="leading" secondItem="hJ9-eg-bhp" secondAttribute="leading" constant="20" id="92n-u1-n2G"/>
                             <constraint firstItem="hJ9-eg-bhp" firstAttribute="trailing" secondItem="lCa-sd-i7U" secondAttribute="trailing" constant="20" id="Aq1-wp-C2d"/>
@@ -279,11 +280,9 @@
                             <constraint firstItem="u9Z-iC-r2e" firstAttribute="leading" secondItem="hJ9-eg-bhp" secondAttribute="leading" constant="20" id="p7r-id-qgh"/>
                             <constraint firstItem="jZV-Ol-Wub" firstAttribute="leading" secondItem="hJ9-eg-bhp" secondAttribute="leading" constant="30" id="paf-Ql-bMa"/>
                             <constraint firstItem="jZV-Ol-Wub" firstAttribute="top" secondItem="fHD-zE-4BK" secondAttribute="bottom" constant="50" id="q9o-lQ-1nt"/>
-                            <constraint firstItem="hJ9-eg-bhp" firstAttribute="trailing" secondItem="V6J-NC-XcI" secondAttribute="trailing" constant="10" id="rpZ-On-NGI"/>
                             <constraint firstItem="hJ9-eg-bhp" firstAttribute="bottom" secondItem="fHD-zE-4BK" secondAttribute="bottom" constant="415" id="shR-5N-tFk"/>
                             <constraint firstItem="hJ9-eg-bhp" firstAttribute="trailing" secondItem="u9Z-iC-r2e" secondAttribute="trailing" constant="20" id="wD5-4k-41R"/>
                             <constraint firstItem="LOg-eH-KkT" firstAttribute="top" secondItem="hJ9-eg-bhp" secondAttribute="top" constant="30" id="ycW-WM-cwS"/>
-                            <constraint firstItem="V6J-NC-XcI" firstAttribute="top" secondItem="fHD-zE-4BK" secondAttribute="bottom" constant="15" id="zQb-Co-DEO"/>
                             <constraint firstItem="hJ9-eg-bhp" firstAttribute="trailing" secondItem="fHD-zE-4BK" secondAttribute="trailing" constant="20" id="zvy-dP-aNa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hJ9-eg-bhp"/>
@@ -299,8 +298,15 @@
                         <outlet property="Addcategory" destination="u9Z-iC-r2e" id="GLh-ph-GUf"/>
                         <outlet property="Addtitle" destination="LOg-eH-KkT" id="BaH-nh-Myt"/>
                         <outlet property="addDesc" destination="fHD-zE-4BK" id="aIm-Li-8gF"/>
+                        <outlet property="catagoryTextField" destination="u9Z-iC-r2e" id="EnR-iu-kLS"/>
+                        <outlet property="icMap" destination="v4Q-V8-Z0S" id="geB-vW-Vss"/>
+                        <outlet property="noteImageView" destination="ps2-EP-MZF" id="AxF-7D-SH1"/>
+                        <outlet property="playButton" destination="7S7-Kz-DMx" id="FJO-8f-4YW"/>
+                        <outlet property="recordButton" destination="fzV-Xb-Tnt" id="udX-jD-2IG"/>
                         <outlet property="recordbtn" destination="fzV-Xb-Tnt" id="lFh-O5-mW1"/>
                         <outlet property="stopbtn" destination="7S7-Kz-DMx" id="vP3-vB-Dnc"/>
+                        <outlet property="txtDescription" destination="fHD-zE-4BK" id="9sH-Yy-jCb"/>
+                        <outlet property="txtTitle" destination="LOg-eH-KkT" id="9Ht-Mx-ZiH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="com-Sy-Gc1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -310,13 +316,13 @@
         <!--View Controller-->
         <scene sceneID="rhc-HB-gqR">
             <objects>
-                <viewController id="Ho0-cj-k6O" sceneMemberID="viewController">
+                <viewController id="Ho0-cj-k6O" customClass="ViewController" customModule="NoteApp_Goal_Diggers_FP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uFD-Jv-ixm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SkA-9F-mk5">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -329,15 +335,18 @@
                         <viewLayoutGuide key="safeArea" id="jcl-m1-mhL"/>
                     </view>
                     <navigationItem key="navigationItem" id="e7h-E4-7yJ"/>
+                    <connections>
+                        <outlet property="imageview" destination="SkA-9F-mk5" id="cdb-iH-5VJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9LO-Y8-au8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3448" y="809"/>
         </scene>
-        <!--View Controller-->
+        <!--MapVC-->
         <scene sceneID="Qv9-9L-Mfg">
             <objects>
-                <viewController id="Pof-bD-6S1" sceneMemberID="viewController">
+                <viewController id="Pof-bD-6S1" customClass="MapVC" customModule="NoteApp_Goal_Diggers_FP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FO7-LU-IdT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -345,6 +354,22 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" rotateEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="efa-Ak-vBK">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5P-Vi-V4j">
+                                <rect key="frame" x="355" y="681" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Buttons"/>
+                                <connections>
+                                    <action selector="btnShowRoute:" destination="Pof-bD-6S1" eventType="touchUpInside" id="Z2h-AI-8Vb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffZ-mT-ywj">
+                                <rect key="frame" x="351" y="738" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Buttonn"/>
+                                <connections>
+                                    <action selector="navButtonPressed:" destination="Pof-bD-6S1" eventType="touchUpInside" id="Qct-m5-AWj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -356,6 +381,9 @@
                         <viewLayoutGuide key="safeArea" id="INU-6p-Q29"/>
                     </view>
                     <navigationItem key="navigationItem" id="vhi-Wt-o5y"/>
+                    <connections>
+                        <outlet property="mapview" destination="efa-Ak-vBK" id="Ngo-0X-EUC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XVL-i0-pZg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -382,7 +410,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="expand.jpg" width="626" height="605"/>
         <image name="paperplane.fill" catalog="system" width="64" height="60"/>
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
         <image name="plus.rectangle.fill" catalog="system" width="64" height="46"/>
