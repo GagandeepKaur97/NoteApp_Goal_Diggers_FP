@@ -183,36 +183,69 @@ class AddCategoryTVC: UITableViewController , UISearchBarDelegate{
             self.present(alertController, animated: false, completion: nil)
         }
         
-        func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-            
-            let Nreq = NSFetchRequest<NSFetchRequestResult>(entityName: "Newnotes")
-            Nreq.returnsObjectsAsFaults = false
-            
-            if !searchText.isEmpty{
-                Nreq.predicate = NSPredicate(format: "title contains[c] %@", searchText)
-                
-                do{
-                   NoteArray = []
-                    let noteObjects = try context?.fetch(Nreq) as! [NSManagedObject]
-                    for n in noteObjects{
-                        let cat = n.value(forKey: "category") as! String
-                        if (!(NoteArray?.contains(cat))!){
-                            NoteArray?.append(cat)
-                        }
-                    }
-                    isSearching = true
-                    tableView.reloadData()
-                    
-                }catch{
-                    print("error")
-                }
-                
-            }else{
-                isSearching = false
-                loadData() // load all data
-            }
-            
-        }
+    
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+           
+           
+               let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Newnotes")
+                      request.predicate = NSPredicate(format: "title contains[c] %@", searchText)
+                      
+                      do{
+                          NoteArray = []
+                                              let noteObjects = try context?.fetch(request) as! [NSManagedObject]
+                                              for n in noteObjects{
+                                                  let cat = n.value(forKey: "category") as! String
+                                                 if (!(NoteArray?.contains(cat))!){
+                                                     NoteArray?.append(cat)
+                                                 }
+                                            }
+                                            isSearching = true
+                                             tableView.reloadData()
+                      }catch{
+                          print(error)
+                      }
+                      tableView.reloadData()
+           if searchText == ""{
+                 loadData()
+           }
+           
+           
+          
+       
+       }
+       
+//        func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//
+//            let Nreq = NSFetchRequest<NSFetchRequestResult>(entityName: "Newnotes")
+//            Nreq.returnsObjectsAsFaults = false
+//
+//            if !searchText.isEmpty{
+//                Nreq.predicate = NSPredicate(format: "title contains[c] %@", searchText)
+//
+//                do{
+//                   NoteArray = []
+//                    let noteObjects = try context?.fetch(Nreq) as! [NSManagedObject]
+//                    for n in noteObjects{
+//                        let cat = n.value(forKey: "category") as! String
+//                        if (!(NoteArray?.contains(cat))!){
+//                            NoteArray?.append(cat)
+//                        }
+//                    }
+//                    isSearching = true
+//                    tableView.reloadData()
+//
+//                }catch{
+//                    print("error")
+//                }
+//
+//            }else{
+//                isSearching = false
+//                loadData() // load all data
+//            }
+//
+//        }
         
         
         func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
