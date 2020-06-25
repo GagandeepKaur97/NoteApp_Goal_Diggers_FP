@@ -382,7 +382,12 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
          
      }
      // MARK: - Image functions
-     
+    
+    
+    
+    
+
+    
      @objc func choosePhoto(){
          
          let imagePicker = UIImagePickerController()
