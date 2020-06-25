@@ -185,7 +185,7 @@ class AddCategoryTVC: UITableViewController , UISearchBarDelegate{
         
         func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
             
-            let Nreq = NSFetchRequest<NSFetchRequestResult>(entityName: "Notes")
+            let Nreq = NSFetchRequest<NSFetchRequestResult>(entityName: "Newnotes")
             Nreq.returnsObjectsAsFaults = false
             
             if !searchText.isEmpty{

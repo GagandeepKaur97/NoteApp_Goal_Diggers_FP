@@ -9,14 +9,16 @@
 import UIKit
 import CoreData
 import CoreLocation
+
+
 class Notescell: UITableViewCell {
 
     @IBOutlet weak var lbtitle: UILabel!
     
     @IBOutlet weak var lbDate: UILabel!
-    @IBOutlet weak var lbTime: UILabel!
+    @IBOutlet weak var lbLocation: UILabel!
     
-    @IBOutlet weak var lblocation: UILabel!
+    @IBOutlet weak var lbTime: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -67,7 +69,7 @@ class Notescell: UITableViewCell {
                             address += placemark.administrativeArea!
                         }
                     }
-                    self.lblocation.text = address
+                    self.lbLocation.text = address
                 }
             }
         }

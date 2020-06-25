@@ -143,9 +143,11 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="lbDate" destination="ACb-f9-F4O" id="K7k-M1-Fua"/>
-                                    <outlet property="lbTime" destination="Zid-v7-tCy" id="FiP-6x-OwA"/>
+                                    <outlet property="lbDate" destination="ACb-f9-F4O" id="f9d-Lc-Wgj"/>
+                                    <outlet property="lbLocation" destination="6uN-T6-dPY" id="jvM-z3-eoL"/>
+                                    <outlet property="lbTime" destination="Zid-v7-tCy" id="Ck5-K9-GLe"/>
                                     <outlet property="lblocation" destination="6uN-T6-dPY" id="pH0-to-lb6"/>
+                                    <outlet property="lbtitle" destination="8IJ-mQ-Op0" id="UD2-pG-Rdd"/>
                                     <outlet property="location" destination="6uN-T6-dPY" id="3ou-wL-LL9"/>
                                     <segue destination="ldb-0V-dlU" kind="show" id="4kp-rR-FdL"/>
                                 </connections>
