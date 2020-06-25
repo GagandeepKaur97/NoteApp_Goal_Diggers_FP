@@ -45,7 +45,7 @@ class AddNotesTVCTableViewController: UITableViewController {
 
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell") as! Notescell
+let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell") as! test
                //            print(notes![indexPath.row].value(forKey: "title") as! String)
                cell.setData(note: notes![indexPath.row])
                return cell
@@ -124,7 +124,7 @@ let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell") as! Notesce
              
                 destination.categoryName = self.categoryName
                 
-                if let noteCell = sender as?  Notescell{
+                if let noteCell = sender as?  test{
                     // old note
                     //    destination.isNewNote = false
                 }
