@@ -144,7 +144,7 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
     
     @IBAction func recordButtonPressed(_ sender: UIButton) {
     
-    
+    print("Record button pressed")
     
          if !isRecording {
              playButton.isHidden = true
@@ -285,6 +285,12 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
      }
      
      
+    
+    @IBAction func btntest(_ sender: UIButton) {
+        
+        choosePhoto()
+    }
+    
      func okAlert(title: String){
          let titleString = NSAttributedString(string: title, attributes: [NSAttributedString.Key.foregroundColor: mainColor, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16)])
          
@@ -384,6 +390,8 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
      // MARK: - Image functions
          
          @objc func choosePhoto(){
+            
+            print("function called")
              
              let imagePicker = UIImagePickerController()
              imagePicker.delegate = self
