@@ -17,6 +17,7 @@ class MapVC: UIViewController , MKMapViewDelegate, CLLocationManagerDelegate  {
     @IBOutlet weak var mapview: MKMapView!
     
     
+    
     var locationManager = CLLocationManager()
     var segueLongitude:Double!
     var segueLatitude:Double!

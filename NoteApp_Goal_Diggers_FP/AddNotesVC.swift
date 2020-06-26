@@ -382,137 +382,132 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
          
      }
      // MARK: - Image functions
-    
-    
-    
-    
-
-    
-     @objc func choosePhoto(){
          
-         let imagePicker = UIImagePickerController()
-         imagePicker.delegate = self
-         
-         let action = UIAlertController(title: "Photo Source", message: "Choose a Source", preferredStyle: .actionSheet)
-         
-         action.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in
+         @objc func choosePhoto(){
              
-             if UIImagePickerController.isSourceTypeAvailable(.camera){
+             let imagePicker = UIImagePickerController()
+             imagePicker.delegate = self
+             
+             let action = UIAlertController(title: "Photo Source", message: "Choose a Source", preferredStyle: .actionSheet)
+             
+             action.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in
                  
-                 imagePicker.sourceType = .camera
-
-                 
-                 switch AVCaptureDevice.authorizationStatus(for: .video) {
-                     case .authorized: // The user has previously granted access to the camera.
-                         self.present(imagePicker, animated: true, completion: nil)
+                 if UIImagePickerController.isSourceTypeAvailable(.camera){
+                     
+                     imagePicker.sourceType = .camera
 
                      
-                     case .notDetermined: // The user has not yet been asked for camera access.
-                         AVCaptureDevice.requestAccess(for: .video) { granted in
-                             if granted {
-                                 self.present(imagePicker, animated: true, completion: nil)
+                     switch AVCaptureDevice.authorizationStatus(for: .video) {
+                         case .authorized: // The user has previously granted access to the camera.
+                             self.present(imagePicker, animated: true, completion: nil)
 
+                         
+                         case .notDetermined: // The user has not yet been asked for camera access.
+                             AVCaptureDevice.requestAccess(for: .video) { granted in
+                                 if granted {
+                                     self.present(imagePicker, animated: true, completion: nil)
+
+                                 }
                              }
-                         }
-                     default:
-                         return
+                         default:
+                             return
+                     }
+                     
+                     
+                 }
+                 else{
+                     self.cameraNotAvailable()
                  }
                  
                  
+                 
+             }))
+             action.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (action:UIAlertAction) in
+                 imagePicker.sourceType = .photoLibrary
+                 
+                 self.present(imagePicker, animated: true, completion: nil)
+                 
+                 
+             }))
+             action.addAction(UIAlertAction(title: "cancel", style:.cancel, handler: nil ))
+             
+             self.present(action, animated: true, completion: nil)
+             
+             
+             
+             
+         }
+         
+         func cameraNotAvailable(){
+             
+             let action = UIAlertController(title: "Camera not available", message: "", preferredStyle: .alert)
+             
+             action.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+             self.present(action, animated: true, completion: nil)
+             
+         }
+         
+         
+         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+             
+             let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+             
+             // new note
+             noteImageView.image = image
+             
+             //old note
+             
+             picker.dismiss(animated: true, completion: nil)
+             saveImageToFile()
+             
+         }
+         
+         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+             picker.dismiss(animated: true, completion: nil)
+         }
+         
+         
+         
+         
+         // MARK: - Navigation
+         
+         // In a storyboard-based application, you will often want to do a little preparation before navigation
+         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+             if let dest = segue.destination as? MapVC{
+                 dest.segueLatitude = newNote?.value(forKey: "lat") as! Double
+                 dest.segueLongitude = newNote?.value(forKey: "long") as! Double
+                 
              }
-             else{
-                 self.cameraNotAvailable()
+             
+             
+             if let iv = segue.destination as? ViewController{
+                 
+                 iv.image = noteImageView.image
+                 
              }
              
-             
-             
-         }))
-         action.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (action:UIAlertAction) in
-             imagePicker.sourceType = .photoLibrary
-             
-             self.present(imagePicker, animated: true, completion: nil)
-             
-             
-         }))
-         action.addAction(UIAlertAction(title: "cancel", style:.cancel, handler: nil ))
-         
-         self.present(action, animated: true, completion: nil)
-         
-         
-         
-         
-     }
-     
-     func cameraNotAvailable(){
-         
-         let action = UIAlertController(title: "Camera not available", message: "", preferredStyle: .alert)
-         
-         action.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-         self.present(action, animated: true, completion: nil)
-         
-     }
-     
-     
-     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-         
-         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-         
-         // new note
-         noteImageView.image = image
-         
-         //old note
-         
-         picker.dismiss(animated: true, completion: nil)
-         saveImageToFile()
-         
-     }
-     
-     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-         picker.dismiss(animated: true, completion: nil)
-     }
-     
-     
-     
-     
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         if let dest = segue.destination as? MapVC{
-             dest.segueLatitude = newNote?.value(forKey: "lat") as! Double
-             dest.segueLongitude = newNote?.value(forKey: "long") as! Double
-             
          }
          
          
-         if let iv = segue.destination as? ViewController{
+         
+     }
+     extension AddNotesVC: UITextViewDelegate , AVAudioPlayerDelegate {
+         
+         
+         func textViewDidBeginEditing(_ textView: UITextView) {
+             if txtDescription.text == "Write note...."{
+                 txtDescription.text = ""
+             }
+             txtDescription.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
              
-             iv.image = noteImageView.image
              
          }
          
-     }
-     
-     
-     
- }
- extension AddNotesVC: UITextViewDelegate , AVAudioPlayerDelegate {
-     
-     
-     func textViewDidBeginEditing(_ textView: UITextView) {
-         if txtDescription.text == "Write note...."{
-             txtDescription.text = ""
+         override func viewWillAppear(_ animated: Bool) {
+             navigationController?.isToolbarHidden = true
          }
-         txtDescription.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+         override func viewWillDisappear(_ animated: Bool) {
+             navigationController?.isToolbarHidden = false
+         }
          
-         
      }
-     
-     override func viewWillAppear(_ animated: Bool) {
-         navigationController?.isToolbarHidden = true
-     }
-     override func viewWillDisappear(_ animated: Bool) {
-         navigationController?.isToolbarHidden = false
-     }
-     
- }
