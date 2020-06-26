@@ -126,12 +126,13 @@ let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell") as! test
                 
                 if let noteCell = sender as?  test{
                     // old note
-                    //    destination.isNewNote = false
+                        destination.isNewNote = false
+                    destination.noteTitle = noteCell.lbtitle.text
                 }
                 
                 if let btn = sender as? UIBarButtonItem{
                     // new note
-              //      destination.isNewNote = true
+            destination.isNewNote = true
                 }
             }
             

@@ -38,11 +38,7 @@ class MapVC: UIViewController , MKMapViewDelegate, CLLocationManagerDelegate  {
     let dest = CLLocationCoordinate2D(latitude: segueLatitude, longitude: segueLongitude)
                getRoute(destination: dest)
            }
-    @IBAction func navButtonPressed(_ sender: UIButton) {
-   let dest = CLLocationCoordinate2D(latitude: segueLatitude, longitude: segueLongitude)
-            getDirection(dest: dest)
-            
-        }
+   
     /*
     // MARK: - Navigation
 
@@ -120,14 +116,7 @@ class MapVC: UIViewController , MKMapViewDelegate, CLLocationManagerDelegate  {
             return MKOverlayRenderer()
         }
         
-        func getDirection(dest: CLLocationCoordinate2D){
-            
-            let source = MKMapItem(placemark:MKPlacemark(coordinate: mapview.userLocation.coordinate))
-            let dest = MKMapItem(placemark: MKPlacemark(coordinate: dest))
-            
-            MKMapItem.openMaps(with: [source , dest], launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving ])
-            
-        }
+        
         
         
         

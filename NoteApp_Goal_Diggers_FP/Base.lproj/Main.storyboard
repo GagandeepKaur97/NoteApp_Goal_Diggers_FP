@@ -399,14 +399,6 @@
                                     <action selector="btnShowRoute:" destination="Pof-bD-6S1" eventType="touchUpInside" id="Z2h-AI-8Vb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffZ-mT-ywj">
-                                <rect key="frame" x="369" y="742" width="21" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="paperplane.fill" catalog="system"/>
-                                <connections>
-                                    <action selector="navButtonPressed:" destination="Pof-bD-6S1" eventType="touchUpInside" id="Qct-m5-AWj"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
