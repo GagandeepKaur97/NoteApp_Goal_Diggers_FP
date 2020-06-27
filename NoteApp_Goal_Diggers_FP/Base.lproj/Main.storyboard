@@ -57,6 +57,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Category" id="bTS-XL-mDq" colorLabel="IBBuiltInLabel-Blue">
                         <barButtonItem key="rightBarButtonItem" image="pencil.and.ellipsis.rectangle" catalog="system" id="o2F-Hw-11e">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="Add:" destination="L21-DB-Ilz" id="BU1-Ol-NhB"/>
                             </connections>
@@ -160,6 +161,7 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="ADD NEW NOTE" id="40j-hR-7IJ">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus.rectangle.fill" catalog="system" id="NMl-4g-dsC">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="ldb-0V-dlU" kind="show" id="c3O-EC-cfb"/>
                             </connections>
@@ -198,7 +200,7 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCa-sd-i7U">
                                 <rect key="frame" x="23" y="705" width="361" height="69"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.077255656529999994" green="0.75324208719999997" blue="0.61853721689999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="69" id="7aa-39-H75"/>
                                 </constraints>
@@ -254,7 +256,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coQ-Tm-pol">
-                                <rect key="frame" x="60" y="413" width="114" height="99.5"/>
+                                <rect key="frame" x="40" y="413" width="114" height="99.5"/>
                                 <state key="normal" title="Select an image:">
                                     <color key="titleColor" red="0.088635526745094312" green="0.96130555868148804" blue="0.93783552366178891" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -277,13 +279,13 @@
                             <constraint firstItem="lCa-sd-i7U" firstAttribute="top" secondItem="fzV-Xb-Tnt" secondAttribute="bottom" constant="8" id="ITN-sM-hiz"/>
                             <constraint firstItem="LOg-eH-KkT" firstAttribute="top" secondItem="hJ9-eg-bhp" secondAttribute="top" constant="30" id="Nch-D7-smF"/>
                             <constraint firstItem="u9Z-iC-r2e" firstAttribute="leading" secondItem="fHD-zE-4BK" secondAttribute="leading" id="OJb-kJ-Ydi"/>
-                            <constraint firstItem="coQ-Tm-pol" firstAttribute="leading" secondItem="hJ9-eg-bhp" secondAttribute="leading" constant="60" id="RTX-gU-VN8"/>
                             <constraint firstItem="fzV-Xb-Tnt" firstAttribute="firstBaseline" secondItem="7S7-Kz-DMx" secondAttribute="firstBaseline" id="WXZ-oF-Pef"/>
                             <constraint firstItem="LOg-eH-KkT" firstAttribute="trailing" secondItem="u9Z-iC-r2e" secondAttribute="trailing" id="Z5R-iW-W7u"/>
                             <constraint firstItem="LOg-eH-KkT" firstAttribute="leading" secondItem="hJ9-eg-bhp" secondAttribute="leading" constant="30" id="c4f-ib-ZlW"/>
                             <constraint firstItem="1GL-OH-RXq" firstAttribute="top" secondItem="ps2-EP-MZF" secondAttribute="bottom" constant="7" id="d46-q8-Gsn"/>
                             <constraint firstItem="u9Z-iC-r2e" firstAttribute="top" secondItem="LOg-eH-KkT" secondAttribute="bottom" constant="15" id="dGr-eM-htE"/>
                             <constraint firstItem="fzV-Xb-Tnt" firstAttribute="baseline" secondItem="7S7-Kz-DMx" secondAttribute="baseline" id="fnK-74-0Ky"/>
+                            <constraint firstItem="coQ-Tm-pol" firstAttribute="leading" secondItem="hJ9-eg-bhp" secondAttribute="leading" constant="40" id="hOU-wC-a0P"/>
                             <constraint firstItem="fzV-Xb-Tnt" firstAttribute="leading" secondItem="lCa-sd-i7U" secondAttribute="leading" id="met-cE-ZTd"/>
                             <constraint firstItem="coQ-Tm-pol" firstAttribute="top" secondItem="fHD-zE-4BK" secondAttribute="bottom" constant="23.5" id="pJW-ug-3Ae"/>
                             <constraint firstItem="ps2-EP-MZF" firstAttribute="leading" secondItem="hJ9-eg-bhp" secondAttribute="leading" constant="30" id="qoo-Sb-gAj"/>
@@ -298,6 +300,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Notes" id="go7-yW-aef">
                         <barButtonItem key="rightBarButtonItem" image="paperplane.fill" catalog="system" id="v4Q-V8-Z0S">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="Pof-bD-6S1" kind="show" id="HsN-8q-aCB"/>
                             </connections>
