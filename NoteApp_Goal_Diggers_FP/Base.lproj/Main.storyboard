@@ -202,7 +202,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="69" id="7aa-39-H75"/>
                                 </constraints>
-                                <state key="normal" title="SAVE"/>
+                                <state key="normal" title="SAVE">
+                                    <color key="titleColor" red="0.093785770300000001" green="0.96130555870000001" blue="0.82543326250000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="btnSave:" destination="ldb-0V-dlU" eventType="touchUpInside" id="A2S-rn-7q6"/>
                                 </connections>
@@ -227,7 +229,7 @@
                                     <constraint firstAttribute="height" constant="26" id="JxA-Vo-jTU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.093785770296068161" green="0.96130555868148804" blue="0.82543326249759641" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzV-Xb-Tnt">
@@ -253,7 +255,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coQ-Tm-pol">
                                 <rect key="frame" x="60" y="413" width="114" height="99.5"/>
-                                <state key="normal" title="Select an image:"/>
+                                <state key="normal" title="Select an image:">
+                                    <color key="titleColor" red="0.088635526745094312" green="0.96130555868148804" blue="0.93783552366178891" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="imagebtn:" destination="ldb-0V-dlU" eventType="touchUpInside" id="xNk-rg-qYh"/>
                                 </connections>
@@ -390,7 +394,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hAq-Io-bU1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.07725565652678533" green="0.7532420871788974" blue="0.61853721688571595" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
