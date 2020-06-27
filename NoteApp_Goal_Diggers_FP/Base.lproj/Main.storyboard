@@ -240,6 +240,7 @@
                                     <constraint firstAttribute="width" constant="135" id="Ml2-vc-id3"/>
                                     <constraint firstAttribute="height" constant="93.5" id="zy6-lX-6dI"/>
                                 </constraints>
+                                <color key="tintColor" red="0.077255656529999994" green="0.75324208719999997" blue="0.61853721689999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="record" image="stop.fill" catalog="system"/>
                                 <connections>
                                     <action selector="recordButtonPressed:" destination="ldb-0V-dlU" eventType="touchUpInside" id="rm6-xW-Yct"/>
@@ -250,6 +251,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7S7-Kz-DMx">
                                 <rect key="frame" x="188" y="639.5" width="49" height="22"/>
+                                <color key="tintColor" red="0.077255656529999994" green="0.75324208719999997" blue="0.61853721689999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="play" image="play.fill" catalog="system"/>
                                 <connections>
                                     <action selector="playButtonPressed:" destination="ldb-0V-dlU" eventType="touchUpInside" id="pHl-Ql-HOA"/>
