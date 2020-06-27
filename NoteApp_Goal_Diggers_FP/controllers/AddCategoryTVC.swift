@@ -37,9 +37,9 @@ class AddCategoryTVC: UITableViewController , UISearchBarDelegate{
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-             self.navigationItem.rightBarButtonItem = self.editButtonItem
-      
-               self.navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.8857288957, green: 0.9869052768, blue: 0.9952554107, alpha: 1)
+//             self.navigationItem.rightBarButtonItem = self.editButtonItem
+//      
+//               self.navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.8857288957, green: 0.9869052768, blue: 0.9952554107, alpha: 1)
         loadData()
     
     }

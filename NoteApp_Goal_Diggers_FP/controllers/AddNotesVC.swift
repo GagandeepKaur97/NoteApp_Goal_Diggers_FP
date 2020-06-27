@@ -285,11 +285,14 @@ class AddNotesVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
      }
      
      
-    
-    @IBAction func btntest(_ sender: UIButton) {
-        
-        choosePhoto()
+    @IBAction func imagebtn(_ sender: UIButton) {
+         choosePhoto()
     }
+    
+//    @IBAction func btntest(_ sender: UIButton) {
+//        
+//        choosePhoto()
+//    }
     
      func okAlert(title: String){
          let titleString = NSAttributedString(string: title, attributes: [NSAttributedString.Key.foregroundColor: mainColor, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16)])

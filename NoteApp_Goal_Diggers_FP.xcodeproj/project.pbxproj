@@ -39,6 +39,12 @@
 		CE117A7C249441D700BECD9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE117A86249578E300BECD9D /* AddCategoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryTVC.swift; sourceTree = "<group>"; };
 		CE21FE8F24A561E70009FAD3 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		CE74995324A7C7F100A08465 /* expand.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = expand.jpg; sourceTree = "<group>"; };
+		CE74995424A7C7F500A08465 /* StopButton.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = StopButton.jpg; sourceTree = "<group>"; };
+		CE74995524A7C7F800A08465 /* StopButton.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = StopButton.jpg; path = ../../../StopButton.jpg; sourceTree = "<group>"; };
+		CE74995624A7C7FD00A08465 /* StopButton.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = StopButton.jpg; path = ../../../StopButton.jpg; sourceTree = "<group>"; };
+		CE74995724A7C80300A08465 /* record.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = record.jpg; sourceTree = "<group>"; };
+		CE74995824A7C80B00A08465 /* expand.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = expand.jpg; path = ../../../expand.jpg; sourceTree = "<group>"; };
 		CEB3C8402497F6720028CF41 /* AddNotesTVCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotesTVCTableViewController.swift; sourceTree = "<group>"; };
 		CECF9DA7249C52C800592EE1 /* notebook.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = notebook.jpg; sourceTree = "<group>"; };
 		CECF9DA9249C61AC00592EE1 /* customAnno.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customAnno.swift; sourceTree = "<group>"; };
@@ -82,17 +88,12 @@
 			children = (
 				CE117A6B249441D400BECD9D /* AppDelegate.swift */,
 				CE117A6D249441D400BECD9D /* SceneDelegate.swift */,
-				CE117A6F249441D400BECD9D /* ViewController.swift */,
-				CECF9DA9249C61AC00592EE1 /* customAnno.swift */,
+				CE74995024A7C78400A08465 /* controllers */,
+				CE74995124A7C7BF00A08465 /* vc controllers */,
 				CE117A71249441D400BECD9D /* Main.storyboard */,
-				CECF9DB324A0651600592EE1 /* AddNotesVC.swift */,
-				CECF9DBD24A16FE000592EE1 /* MapVC.swift */,
-				CEB3C8402497F6720028CF41 /* AddNotesTVCTableViewController.swift */,
-				CE117A86249578E300BECD9D /* AddCategoryTVC.swift */,
 				CE117A77249441D700BECD9D /* Assets.xcassets */,
-				CE117A79249441D700BECD9D /* LaunchScreen.storyboard */,
 				CECF9DCF24A3DBE600592EE1 /* expand.jpg */,
-				CECF9DA7249C52C800592EE1 /* notebook.jpg */,
+				CE74995224A7C7E900A08465 /* photos */,
 				CECF9DD124A3DBEA00592EE1 /* StopButton.jpg */,
 				CE117A7C249441D700BECD9D /* Info.plist */,
 				CECF9DD524A3DBF400592EE1 /* imageadd.jpg */,
@@ -101,6 +102,41 @@
 				CE21FE8F24A561E70009FAD3 /* test.swift */,
 			);
 			path = NoteApp_Goal_Diggers_FP;
+			sourceTree = "<group>";
+		};
+		CE74995024A7C78400A08465 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CECF9DBD24A16FE000592EE1 /* MapVC.swift */,
+				CE117A86249578E300BECD9D /* AddCategoryTVC.swift */,
+				CEB3C8402497F6720028CF41 /* AddNotesTVCTableViewController.swift */,
+				CECF9DB324A0651600592EE1 /* AddNotesVC.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		CE74995124A7C7BF00A08465 /* vc controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CECF9DA9249C61AC00592EE1 /* customAnno.swift */,
+				CE117A6F249441D400BECD9D /* ViewController.swift */,
+			);
+			path = "vc controllers";
+			sourceTree = "<group>";
+		};
+		CE74995224A7C7E900A08465 /* photos */ = {
+			isa = PBXGroup;
+			children = (
+				CECF9DA7249C52C800592EE1 /* notebook.jpg */,
+				CE74995724A7C80300A08465 /* record.jpg */,
+				CE74995824A7C80B00A08465 /* expand.jpg */,
+				CE117A79249441D700BECD9D /* LaunchScreen.storyboard */,
+				CE74995424A7C7F500A08465 /* StopButton.jpg */,
+				CE74995524A7C7F800A08465 /* StopButton.jpg */,
+				CE74995624A7C7FD00A08465 /* StopButton.jpg */,
+				CE74995324A7C7F100A08465 /* expand.jpg */,
+			);
+			path = photos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
